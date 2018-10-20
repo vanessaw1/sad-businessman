@@ -14,16 +14,16 @@ export default class GameState extends React.Component {
             skills: {bribe:1, pr:1, ads:1, product:1, profit:1},
             scores: {money:1000000, reputation:1, efficiency:1},
             isEvents: false,
-            events: {money:-1, reputation:-1, efficiency:-1},
-            isSkillChanged: false, 
-            skillChange: [0,0,0,0,0],
+            events: { money: -1, reputation: -1, efficiency: -1 },
+            isSkillChanged: false,
+            skillChange: [0, 0, 0, 0, 0],
             isFactoryChanged: false,
-            factoryChange: [0,0,0,0,0],
-       }
-       this.changeSkills = this.changeSkills.bind(this);
-       this.changeFactory = this.changeFactory.bind(this);
+            factoryChange: [0, 0, 0, 0, 0],
+        }
+        this.changeSkills = this.changeSkills.bind(this);
+        this.changeFactory = this.changeFactory.bind(this);
     };
-    
+
     componentDidMount() {
         this.timerID = setInterval(
             () => this.tick(),
@@ -85,7 +85,8 @@ export default class GameState extends React.Component {
         const c = state.skillChange;
         this.setState({
             isSkillChanged: false,
-            skills: {bribe: s.bribe + c[0],
+            skills: {
+                bribe: s.bribe + c[0],
                 pr: s.pr + c[1],
                 ads: s.ads + c[2],
                 product: s.product + c[3],
@@ -148,10 +149,10 @@ export default class GameState extends React.Component {
             return newEvent 
         }
         else {
-            return {money:-1, reputation:-1, efficiency:-1};
+            return { money: -1, reputation: -1, efficiency: -1 };
         }
     }
-    
+
     tick() {
         this.setState((state) => ({
             scores: this.updateScores(state),
@@ -186,7 +187,7 @@ export default class GameState extends React.Component {
         }
         const gameState = this.endGame();
         return (
-            <div> 
+            <div>
                 <h1>The businessman has money {this.state.scores.money}.</h1>
                 <h1>The businessman has money event {this.state.events.money}.</h1>
                 <h1>The businessman is at stage {gameState}.</h1>

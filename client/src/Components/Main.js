@@ -6,20 +6,22 @@ class Main extends React.Component {
         return (
             <div className="Main">
                 <div>
-                    These are all of your stats
+                    Here is an overview of your company
                 </div>
-                <table>
+                {/* <table className="Stats">
                     <tr>
                         <th>Money</th>
                         <th>Factories</th>
                         <th>Reputation</th>
+                        <th>Destruction</th>
                     </tr>
                     <tr>
                         <th>{this.props.money}</th>
                         <th>{this.props.factories}</th>
                         <th>{this.props.reputation}</th>
+                        <th>{this.props.destruction}</th>
                     </tr>
-                </table>
+                </table> */}
             </div>
         );
     }

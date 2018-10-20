@@ -1,0 +1,32 @@
+.Sidebar {
+  position: absolute;
+  left: 0;
+  top: 100px;
+  z-index: 1;
+  width: 200px;
+  /* background-color: lightblue; */
+}
+
+button {
+  position: relative;
+  top: 50px;
+  border-radius: 10px;
+  background-color: white;
+  border: 5px solid deeppink;
+  color: mediumvioletred;
+  padding: 20px 30px;
+  text-align: center;
+  display: inline-block;
+  font-size: 20px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  margin: 10px 0px;
+  width: 100%;
+  display: block;
+}
+  
+button:hover {
+  background-color: deeppink;
+  color: purple;
+}

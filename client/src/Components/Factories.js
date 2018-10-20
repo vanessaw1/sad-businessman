@@ -1,10 +1,11 @@
 import React from 'react';
+import '../Styles/Factories.css';
 
 class Factories extends React.Component {
     render() {
         return (
             <div className = "Factories">
-                This are your factories
+                These are your factories
             </div>
         );
     }
