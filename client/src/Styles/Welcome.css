@@ -9,29 +9,6 @@
 }
 
 .KCAMM {
-<<<<<<< HEAD
-  position: absolute;
-  top: 190px;
-  left: 100px;
-  height: 340px;
-  width: 340px;
-  border: None;
-  border-radius: 8px;
-  opacity: 0.7;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.ENDE {
-  position: absolute;
-  top: 210px;
-  left: 600px;
-  height:300px;
-  width: 400px;
-  border: None;
-  border-radius: 8px;
-  opacity: 0.7;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-=======
   max-width:300px;
   max-height:300px;
   margin: 0 10px;
@@ -46,5 +23,4 @@
   max-height:300px;
   max-width: 400px;
   margin: 0 10px;
->>>>>>> 88eb92985623efdda17936968f4a74b3cfad64a9
 }
