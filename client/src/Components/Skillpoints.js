@@ -16,16 +16,16 @@ class Skillpoints extends React.Component {
         this.handleProfitDec = this.handleProfitDec.bind(this);
     }
 
-    handleBribeDec(e) {this.props.changeSkill([-1,0,0,0,0])}
-    handleBribeInc(e) {this.props.changeSkill([1,0,0,0,0])}
-    handlePRDec(e) {this.props.changeSkill([0,-1,0,0,0])}
-    handlePRInc(e) {this.props.changeSkill([0,1,0,0,0])}
-    handleAdsDec(e) {this.props.changeSkill([0,0,-1,0,0])}
-    handleAdsInc(e) {this.props.changeSkill([0,0,1,0,0])}
-    handleProductDec(e) {this.props.changeSkill([0,0,0,-1,0])}
-    handleProductInc(e) {this.props.changeSkill([0,0,0,1,0])}
-    handleProfitDec(e) {this.props.changeSkill([0,0,0,0,-1])}
-    handleProfitInc(e) {this.props.changeSkill([0,0,0,0,1])}
+    handleBribeDec(e) { this.props.changeSkill([-1, 0, 0, 0, 0]) }
+    handleBribeInc(e) { this.props.changeSkill([1, 0, 0, 0, 0]) }
+    handlePRDec(e) { this.props.changeSkill([0, -1, 0, 0, 0]) }
+    handlePRInc(e) { this.props.changeSkill([0, 1, 0, 0, 0]) }
+    handleAdsDec(e) { this.props.changeSkill([0, 0, -1, 0, 0]) }
+    handleAdsInc(e) { this.props.changeSkill([0, 0, 1, 0, 0]) }
+    handleProductDec(e) { this.props.changeSkill([0, 0, 0, -1, 0]) }
+    handleProductInc(e) { this.props.changeSkill([0, 0, 0, 1, 0]) }
+    handleProfitDec(e) { this.props.changeSkill([0, 0, 0, 0, -1]) }
+    handleProfitInc(e) { this.props.changeSkill([0, 0, 0, 0, 1]) }
 
     render() {
         const skills = this.props.skills;
@@ -36,7 +36,7 @@ class Skillpoints extends React.Component {
                 <div className="Upgrades">
                     <div>
                         <button className="dec" onClick={this.handleBribeDec}>-</button>
-                        Bribes {skills.bribe}
+                        Bribes   {skills.bribe}
                         <button className="inc" onClick={this.handleBribeInc}>+</button>
                     </div>
                     <div>
