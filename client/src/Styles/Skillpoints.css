@@ -1,0 +1,12 @@
+.inc .dec {
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid deeppink;
+    color: mediumvioletred;
+    padding: 2px 3px;
+    text-align: center;
+    cursor: pointer;
+    margin: 10px 0px;
+    width: 100%;
+    display: block;
+}

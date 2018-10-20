@@ -7,27 +7,27 @@ class Sidebar extends React.Component {
         return (
             <div className="Sidebar">
                 <Link to="/overview">
-                    <button className="OverviewButton">
+                    <button className="Overview nav">
                         Overview
                     </button>
                 </Link>
                 <Link to="/map">
-                    <button className="MapButton">
+                    <button className="Map nav">
                         Map
                     </button>
                 </Link>
                 <Link to="/skillpoints">
-                    <button className="SkillpointsButton">
+                    <button className="Skillpoints nav">
                         Skillpoints
                     </button>
                 </Link>
                 <Link to="/factories">
-                    <button className="FactoriesButton">
+                    <button className="Factories nav">
                         Factories
                     </button>
                 </Link>
                 <Link to="/inbox">
-                    <button className="InboxButton">
+                    <button className="Inbox nav">
                         Inbox
                     </button>
                 </Link>

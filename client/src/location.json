@@ -1,0 +1,8 @@
+{
+    "africa":["Nairobi", "Malabo"], 
+    "na":["New York", "Ithaca", "Boston"], 
+    "sa":["Lima"], 
+    "asia":["Beijing", "Hanoi"], 
+    "eu":["London", "Paris", "Berlin", "Moscow"],
+    "pacific":["Sydney"]
+}

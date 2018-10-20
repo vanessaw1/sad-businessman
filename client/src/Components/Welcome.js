@@ -8,7 +8,7 @@ class Welcome extends React.Component {
     return (
       <div>
         <div className="Welcome">
-          Welcome! You are a businessman/businesswoman trying to expand your
+          Welcome! You are a businessperson trying to expand your
           coporation across the world. You can either make money or destroy
           the environment or both. It is up to you how you want to make this
           adventure.

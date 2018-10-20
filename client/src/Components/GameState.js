@@ -1,10 +1,8 @@
 import React from 'react';
 import App from './App.js'
-// import '../Styles/App.css';
 
 const numEvent = 1
 
-// GameState.props = {isSkillChanged: bool, skillChange: [int,int,int,int,int]}
 export default class GameState extends React.Component {
     constructor(props) {
         super(props);
