@@ -77,7 +77,7 @@ class App extends React.Component {
                             <Route path="/factories" render={(props) => 
                                 <Factories
                                     factories={f}
-                                    changeFactories={this.props.changeFactories}
+                                    changeFactory={this.props.changeFactory}
                                 />} />
                             <Route path="/inbox" component={Inbox} />
                         </div>
