@@ -14,15 +14,11 @@ class Welcome extends React.Component {
           adventure.
         </div>
 
-        <div className="KCAMM">
-          <img src={money} alt="KEEP CALM AND MAKE MONEY"
-            width="600" height="1000" />
-        </div>
+        <img className="KCAMM" src={money} alt="KEEP CALM AND MAKE MONEY"
+          width="600" height="1000" />
 
-        <div className="ENDE">
-          <img src={environmentdes} alt="ENVIRONMENTAL DESTRUCTION"
-            width="600" height="400" />
-        </div>
+        <img className="ENDE" src={environmentdes} alt="ENVIRONMENTAL DESTRUCTION"
+          width="600" height="400" />
       </div>
     );
   }

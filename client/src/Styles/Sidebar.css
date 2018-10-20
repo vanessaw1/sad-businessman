@@ -1,6 +1,6 @@
 .Sidebar {
   position: absolute;
-  left: 0;
+  left: 5px;
   top: 100px;
   z-index: 1;
   width: 200px;
