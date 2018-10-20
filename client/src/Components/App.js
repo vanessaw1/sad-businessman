@@ -28,15 +28,10 @@ class App extends React.Component {
                 <h1>The businessman has money {this.props.scores}.</h1>
             <Router>
                 <div>
-<<<<<<< HEAD
                 {/* <h1>The businessman has money event {this.props.events.money}.</h1> */}
                 {/* <h1>The businessman is at stage {this.props.gameState}.</h1> */}
                     <Header money={10} factories={10} reputation={10} destruction={10}/>
                     <Sidebar/>
-=======
-                    <Header money={10} factories={10} reputation={10} destruction={10} />
-                    <Sidebar />
->>>>>>> 6825f137fa04a8cc08c8f5ea32a77b2cb036ce39
                     <div className="Content">
                         <Route path="/overview" render={(props) => <Overview money={10} factories={10} reputation={10} destruction={10} />} />
                         <Route path="/map" component={WorldMap} />
