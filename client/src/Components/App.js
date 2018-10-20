@@ -20,10 +20,15 @@ const repuEvent = event[1];
 const effiEvent = event[2];
 
 class App extends React.Component {
+    constructor(props) {
+        super(props);
+    }
     render() {
         return (
+            <div> 
             <Router>
                 <div>
+<<<<<<< HEAD
                     <Header money={10} factories={10}
                         reputation={10} destruction={10} />
                     <Sidebar />
@@ -31,6 +36,13 @@ class App extends React.Component {
                         <Route path="/overview" render={(props) =>
                             <Overview money={10} factories={10}
                                 reputation={10} destruction={10} />} />
+=======
+                    <Header money={this.props.scores.money} factories={10} reputation={10} destruction={10} />
+                    <Sidebar />
+                    <div className="Content">
+                        <Route path="/overview" render={(props) => 
+                            <Overview money={10} factories={10} reputation={10} destruction={10} />} />
+>>>>>>> e306408c7cd0f7df8d75ca94ac442249d026d23d
                         <Route path="/map" component={WorldMap} />
                         <Route path="/skillpoints" component={Skillpoints} />
                         <Route path="/factories" component={Factories} />
@@ -38,6 +50,7 @@ class App extends React.Component {
                     </div>
                 </div>
             </Router>
+            </div>
         );
     }
 }
