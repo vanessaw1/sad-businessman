@@ -8,16 +8,12 @@ import Skillpoints from './Skillpoints.js';
 import Factories from './Factories.js';
 import Inbox from './Inbox.js';
 
-// import '../GameState.js';
 import '../Styles/App.css';
-import '../Styles/Sidebar.css';
-// import GameState from "./GameState.js"
+// import event from '../event.json';
 
-import event from '../event.json';
-
-const moneEvent = event[0];
-const repuEvent = event[1];
-const effiEvent = event[2];
+// const moneEvent = event[0];
+// const repuEvent = event[1];
+// const effiEvent = event[2];
 
 class App extends React.Component {
     constructor(props) {

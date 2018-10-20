@@ -1,6 +1,5 @@
 import React from 'react';
 import App from './App.js'
-// import '../Styles/App.css';
 
 const numEvent = 1
 

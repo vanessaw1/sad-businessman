@@ -1,4 +1,5 @@
 import React from 'react';
+import '../Styles/WorldMap.css';
 
 class WorldMap extends React.Component {
 
