@@ -1,11 +1,9 @@
 body {
   background-color:rgb(39, 17, 48);
   background-image: url("../Resources/Neon-city.jpg");
-  background-position: bottom right;
+  background-position: bottom;
   background-position-y: 100px;
-  background-size: 1300px, 2600px;
-  width: 100%;
-  height: 100%;
+  background-size: 100%, 100%;
 }
 
 .Content {
