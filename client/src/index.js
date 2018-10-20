@@ -2,12 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './index.css';
+import GameState from "./GameState.js"
 
 class App extends React.Component {
     render() {
         return (
             <Router>
                 <div className="App">
+                    <GameState />
                     <div>
                         <Link to="/main">Main</Link>
                         <Link to="/map">Map</Link>
