@@ -1,10 +1,10 @@
 import React from 'react';
-import '../Styles/Main.css';
+import '../Styles/Overview.css';
 
-class Main extends React.Component {
+class Overview extends React.Component {
     render() {
         return (
-            <div className="Main">
+            <div className="Overview">
                 <div>
                     Here is an overview of your company
                 </div>
@@ -27,4 +27,4 @@ class Main extends React.Component {
     }
 }
 
-export default Main;
+export default Overview;

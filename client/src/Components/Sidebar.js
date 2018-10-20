@@ -6,9 +6,9 @@ class Sidebar extends React.Component {
     render() {
         return (
             <div className="Sidebar">
-                <Link to="/main">
-                    <button className="MainButton">
-                        Main
+                <Link to="/overview">
+                    <button className="OverviewButton">
+                        Overview
                     </button>
                 </Link>
                 <Link to="/map">

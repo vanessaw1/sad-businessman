@@ -1,7 +1,7 @@
 import React from 'react';
 import Login from './Login.js'
 import '../Styles/Header.css';
-
+import logo from "../Resources/BRHF18.png";
 class Header extends React.Component {
     render() {
         return (
@@ -20,18 +20,6 @@ class Header extends React.Component {
                         <td>Destruction</td>
                     </tr>
                 </table>
-                {/* <div className="Stats">
-                    {this.props.money}
-                    {this.props.factories}
-                    {this.props.reputation}
-                    {this.props.destruction}
-                </div> */}
-                {/* <div className="StatsItems">
-                    Money
-                    Factories
-                    Reputation
-                    Destruction
-                </div> */}
                 {/* <span className = "SpeedControl">
                     <input type="radio" name="pause">
                         Pause
@@ -46,7 +34,8 @@ class Header extends React.Component {
                 <div className="Login">
                     {Login}
                 </div>
-
+                <img src={logo}
+                    alt="LOGO" width="50" height="100" />
             </div>
         );
     }
