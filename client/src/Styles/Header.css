@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'neuron';
+  src:url("../Resources/Neuron.otf")
+}
+
+@font-face {
+  font-family: 'doris';
+  src:url("../Resources/Dosis-Light.ttf")
+}
+
 .Header {
     background-color: rgb(122, 45, 86);
     position: absolute;
@@ -16,6 +26,8 @@
   width: 50%;
   margin-left: 28%;
   margin-right: 25%;
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
   text-align: center; 
   color:  deeppink;
   border-collapse:collapse;
@@ -23,12 +35,15 @@
 }
 
 .Stats th {
-  font-size: 30px;
+  font-family: 'doris';
+  font-size: 32px;
   border: None;
 }
 
 .Stats td {
+  font-family: 'neuron';
   font-size: 20px;
+  font-weight: bold;
   border: None;
 }
 

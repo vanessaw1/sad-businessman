@@ -14,7 +14,7 @@ class Welcome extends React.Component {
           the environment or both. It is up to you how you want to make this
           adventure.
         </div>
-        <div className="Images">
+        {/* <div className="Images">
           <span>
           <img className="KCAMM" src={money} alt="KEEP CALM AND MAKE MONEY"
             width="600" height="1000" />
@@ -27,7 +27,7 @@ class Welcome extends React.Component {
           <img className="ENDE" src={environmentdes} alt="ENVIRONMENTAL DESTRUCTION"
             width="600" height="400" />
           </span>
-        </div>
+        </div> */}
       </div>
     );
   }
