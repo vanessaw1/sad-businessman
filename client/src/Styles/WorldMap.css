@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'doris';
+  src:url("../Resources/Dosis-Light.ttf")
+}
+
+body {
+  color: deeppink;
+  font-family: 'doris';
+}

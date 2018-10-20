@@ -1,8 +1,7 @@
 .inc .dec {
-    background-color: white;
     padding: 20px 30px;
     text-align: center;
-    color: mediumvioletred;
+    color: rgb(122, 45, 86);
     cursor: pointer;
     margin: 10px 0px;
     width: 100%;
@@ -15,13 +14,14 @@ button:hover {
 }
 
 .Upgrades {
-    font-size: 20px;
+    margin: 10px, 10px;
+    font-size: 30px;
     padding-bottom: 10px;
     color: deeppink;
 }
 
 .Intro {
     margin: 1rem 1rem;
-    font-size: 20px;
-    color: mediumvioletred;
+    font-size: 30px;
+    color: deeppink;
 }

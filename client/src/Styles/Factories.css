@@ -1,5 +1,25 @@
+@font-face {
+  font-family: 'neuron';
+  src:url("../Resources/Neuron.otf")
+}
+
+@font-face {
+  font-family: 'doris';
+  src:url("../Resources/Dosis-Light.ttf")
+}
+
 .FactoriesContent {
+  font-family: 'doris';
+  font-weight: bold;
   margin: 1rem 1rem;
+  font-size: 30px;
+  color: deeppink;
+}
+
+button {
   font-size: 20px;
-  color: mediumvioletred;
+  font-weight: bold;
+  font-family: 'neuron';
+  color: rgb(179, 15, 102);
+  background-color: transparent;
 }

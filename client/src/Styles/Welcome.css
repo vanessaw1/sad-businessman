@@ -1,8 +1,14 @@
+@font-face {
+  font-family: 'doris';
+  src:url("../Resources/Dosis-Light.ttf");
+}
+
 .Welcome {
   font-size: 30px;
-  padding-top: 10px;
-  margin: 10px 10px;
-  color: mediumvioletred;
+  margin-top: 0px;
+  margin: 15px 15px;
+  color: rgb(216, 38, 151);
+  font-family: 'doris';
 }
 
 .Images {
