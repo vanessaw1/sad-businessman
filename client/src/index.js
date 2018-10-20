@@ -14,7 +14,7 @@ class App extends React.Component {
     render() {
         return (
             <Router>
-                <div className="App">
+                <div>
                     <div className="Sidebar">
                         <Link to="/main">
                             <button className="MainButton">
@@ -41,8 +41,13 @@ class App extends React.Component {
                                 Inbox
                             </button>
                         </Link>
+                        {/* <Link to="/login">
+                            <button className="LoginButton">
+                                Login
+                            </button>
+                        </Link> */}
                     </div>
-                    <div>
+                    <div className="Content">
                         <Route path="/login" component={Login} />
                         <Route path="/main" component={Main} />
                         <Route path="/map" component={WorldMap} />
