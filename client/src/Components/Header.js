@@ -13,7 +13,7 @@ class Header extends React.Component {
                         <th>{this.props.money}</th>
                         <th>{this.props.factories}</th>
                         <th>{this.props.reputation}</th>
-                        <th>{this.props.destruction}</th>
+                        <th>{this.props.destruction} / 600</th>
                     </tr>
                     <tr>
                         <td>Money</td>

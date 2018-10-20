@@ -60,7 +60,14 @@ class App extends React.Component {
                                 <Overview money={sc.money} factories={factorySum}
                                     reputation={sc.reputation} destruction={destructionSum} />} />
                             <Route path="/map" component={WorldMap} />
-                            <Route path="/skillpoints" component={Skillpoints} />
+                            <Route path="/skillpoints" render={(props) =>
+                                <Skillpoints 
+                                skills={skills} 
+                                beep={this.props.beep} 
+                                changeSkill={this.props.changeSkill}
+                                skillPointLeft={this.props.skillPointLeft}
+                                />
+                            }/>
                             <Route path="/factories" component={Factories} />
                             <Route path="/inbox" component={Inbox} />
                         </div>

@@ -13,13 +13,13 @@ export default class GameState extends React.Component {
             scores: {money:1000000, reputation:1, efficiency:1},
             isEvents: false,
             events: { money: -1, reputation: -1, efficiency: -1 },
-            isSkillChanged: false,
-            skillChange: [0, 0, 0, 0, 0],
             isFactoryChanged: false,
             factoryChange: [0, 0, 0, 0, 0],
+            skillPointLeft: 35
         }
         this.endGame = this.endGame.bind(this);
-        this.changeSkills = this.changeSkills.bind(this);
+        this.beep = this.beep.bind(this);
+        this.changeSkill = this.changeSkill.bind(this);
         this.changeFactory = this.changeFactory.bind(this);
     };
 
@@ -36,6 +36,7 @@ export default class GameState extends React.Component {
 
     changeFactory(e,factoryChange) {
         const sc = this.state.scores;
+        
         if (sc.money > 100) {
             this.setState({
                 scores: {
@@ -64,34 +65,35 @@ export default class GameState extends React.Component {
         });
     }
 
-    changeSkills(e,skillChange) {
+    changeSkill(c) {
         const sc = this.state.scores;
-        if (sc.money > 100) {
+        const s = this.state.skills;
+        const l = this.state.skillPointLeft;
+        const bribe = s.bribe + c[0];
+        const pr = s.pr + c[1];
+        const ads = s.ads + c[2];
+        const product = s.product + c[3];
+        const profit = s.profit + c[4];
+        const temp = [bribe, pr, ads, product, profit].filter(skill => skill < 0 || skill > 20)
+        const point = c.reduce((a, b) => a + b, 0);
+        if (l > 0 && temp.length === 0 && sc.money > 100)
+            {
             this.setState({
                 scores: {
                     money: sc.money - 100, 
                     reputation: sc.reputation, 
                     efficiency: sc.efficiency
                 },
-                isSkillChanged: true, 
-                skillChange: skillChange
+                skills: {
+                    bribe: bribe,
+                    pr: pr,
+                    ads: ads,
+                    product: product,
+                    profit: profit
+                },
+                skillPointLeft: l-point
             });
         }
-    }
-
-    updateSkills(state) {
-        const s = state.skills;
-        const c = state.skillChange;
-        this.setState({
-            isSkillChanged: false,
-            skills: {
-                bribe: s.bribe + c[0],
-                pr: s.pr + c[1],
-                ads: s.ads + c[2],
-                product: s.product + c[3],
-                profit: s.profit + c[4]
-            },
-        });
     }
 
     updateScores(past) {
@@ -140,6 +142,10 @@ export default class GameState extends React.Component {
         return -1;
     }
 
+    beep(e){
+        alert("beep");
+    }
+
     updateEvent(past) {
         const money = this.spawn(past.money);
         const reputation = this.spawn(past.reputation);
@@ -179,9 +185,6 @@ export default class GameState extends React.Component {
     }
 
     render() {
-        if (this.state.isSkillChanged === true) {
-            this.updateSkills();
-        }
         if (this.state.isFactoryChanged === true) {
             this.updateFactory();
         }
@@ -190,18 +193,21 @@ export default class GameState extends React.Component {
         const events = this.state.events;
         const factories = this.state.factories;
         const percentage = this.state.percentage;
+        const skillPointLeft = this.state.skillPointLeft;
         const gameState = this.endGame();
         return (
             <div>
                 <App 
                 gameState = {gameState}
-                changeSkills = {this.changeSkills} 
+                changeSkill = {this.changeSkill} 
                 changeFactory = {this.changeFactory} 
                 events = {events}
                 scores = {scores}
                 factories = {factories}
                 skills = {skills}
                 percentage = {percentage}
+                beep = {this.beep}
+                skillPointLeft = {skillPointLeft}
                 />
             </div>
         );
