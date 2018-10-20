@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import Welcome from './Welcome.js'
 import Header from './Header.js'
 import Sidebar from './Sidebar.js'
 import Overview from './Overview.js'
