@@ -12,8 +12,8 @@
   font-size: 25px;
   height: 100px;
   width: 50%;
-  margin-left: 25%;
-  margin-right: 25%;
+  margin-left: 30%;
+  margin-right: 20%;
   text-align: center; 
   color:  deeppink;
   border-collapse:collapse;
@@ -28,4 +28,16 @@
 .Stats td {
   font-size: 20px;
   border: None;
+}
+
+img {
+  position: absolute;
+  top:0;
+  left : 0;
+  right : 0;
+  height:90px;
+  border: None;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
 }
