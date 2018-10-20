@@ -1,7 +1,9 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import Login from './Login.js'
 import '../Styles/Header.css';
 import logo from "../Resources/BRHF18.png";
+
 class Header extends React.Component {
     render() {
         return (
@@ -34,8 +36,14 @@ class Header extends React.Component {
                 <div className="Login">
                     {Login}
                 </div>
-                <img src={logo}
-                    alt="LOGO" width="50" height="100" />
+                <div>
+                    <Link to="">
+                        <img src={logo}
+                            alt="LOGO" width="50" height="100" />
+                    </Link>
+                </div>
+
+
             </div>
         );
     }

@@ -7,6 +7,7 @@ import WorldMap from './WorldMap.js';
 import Skillpoints from './Skillpoints.js';
 import Factories from './Factories.js';
 import Inbox from './Inbox.js';
+
 // import '../GameState.js';
 import '../Styles/App.css';
 import '../Styles/Sidebar.css';
@@ -27,11 +28,21 @@ class App extends React.Component {
             <div> 
             <Router>
                 <div>
+<<<<<<< HEAD
+                    <Header money={10} factories={10}
+                        reputation={10} destruction={10} />
+                    <Sidebar />
+                    <div className="Content">
+                        <Route path="/overview" render={(props) =>
+                            <Overview money={10} factories={10}
+                                reputation={10} destruction={10} />} />
+=======
                     <Header money={this.props.scores.money} factories={10} reputation={10} destruction={10} />
                     <Sidebar />
                     <div className="Content">
                         <Route path="/overview" render={(props) => 
                             <Overview money={10} factories={10} reputation={10} destruction={10} />} />
+>>>>>>> e306408c7cd0f7df8d75ca94ac442249d026d23d
                         <Route path="/map" component={WorldMap} />
                         <Route path="/skillpoints" component={Skillpoints} />
                         <Route path="/factories" component={Factories} />
