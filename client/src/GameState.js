@@ -17,9 +17,9 @@ export default class GameState extends React.Component {
         this.timerID = setInterval(
             () => this.tick(),
             1000
-          );
+        );
     }
-  
+
     componentWillUnmount() {
         clearInterval(this.timerID);
     }
