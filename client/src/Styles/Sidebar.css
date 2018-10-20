@@ -28,5 +28,5 @@ button {
   
 button:hover {
   background-color: deeppink;
-  color: purple;
+  color: rgba(78, 0, 78, 0.747);
 }
