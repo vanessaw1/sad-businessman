@@ -18,9 +18,6 @@ import event from '../event.json';
 // const effiEvent = event[2];
 
 class App extends React.Component {
-    constructor(props) {
-        super(props);
-    }
     sum(f) {
         const v = Math.round((f.asia + f.na + f.sa + f.pacific + f.africa + f.eu) * 100) / 100;
         return v;
@@ -51,24 +48,37 @@ class App extends React.Component {
             <div>
                 <Router>
                     <div>
-                        <Header money={this.props.scores.money}
-                            factories={factorySum} reputation={sc.reputation} destruction={destructionSum} />
+                        <Header 
+                            money={this.props.scores.money}
+                            factories={factorySum}
+                            reputation={sc.reputation}
+                            destruction={destructionSum}
+                        />
                         <Sidebar />
                         <div className="Content">
                             <Route exact path="/" component={Welcome} />
                             <Route path="/overview" render={(props) =>
-                                <Overview money={sc.money} factories={factorySum}
-                                    reputation={sc.reputation} destruction={destructionSum} />} />
+                                <Overview 
+                                    money={sc.money} 
+                                    factories={factorySum}
+                                    reputation={sc.reputation} 
+                                    destruction={destructionSum} 
+                                />} 
+                            />
                             <Route path="/map" component={WorldMap} />
                             <Route path="/skillpoints" render={(props) =>
                                 <Skillpoints 
-                                skills={skills} 
-                                beep={this.props.beep} 
-                                changeSkill={this.props.changeSkill}
-                                skillPointLeft={this.props.skillPointLeft}
+                                    skills={skills} 
+                                    beep={this.props.beep} 
+                                    changeSkill={this.props.changeSkill}
+                                    skillPointLeft={this.props.skillPointLeft}
                                 />
                             }/>
-                            <Route path="/factories" component={Factories} />
+                            <Route path="/factories" render={(props) => 
+                                <Factories
+                                    factories={f}
+                                    changeFactories={this.props.changeFactories}
+                                />} />
                             <Route path="/inbox" component={Inbox} />
                         </div>
                     </div>
