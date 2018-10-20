@@ -38,7 +38,7 @@ class Header extends React.Component {
                 </div>
                 <div>
                     <Link to="">
-                        <img src={logo}
+                        <img className="Logo" src={logo}
                             alt="LOGO" width="50" height="100" />
                     </Link>
                 </div>
