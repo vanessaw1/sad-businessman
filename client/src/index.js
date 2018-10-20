@@ -9,6 +9,7 @@ import Factories from './Factories';
 import Inbox from './Inbox';
 import './GameState';
 import './index.css';
+import GameState from "./GameState.js"
 
 class App extends React.Component {
     render() {
@@ -49,7 +50,11 @@ class App extends React.Component {
                     </div>
                     <div className="Content">
                         <Route path="/login" component={Login} />
+<<<<<<< HEAD
                         <Route path="/main" render={(props) => <Main money={10} factories={10} reputation={10}/>} />
+=======
+                        <Route path="/main" component={Main} />
+>>>>>>> a0aa366509a2a8929ec032583da8f9a137c4c5dd
                         <Route path="/map" component={WorldMap} />
                         <Route path="/skillpoints" component={Skillpoints} />
                         <Route path="/factories" component={Factories} />
