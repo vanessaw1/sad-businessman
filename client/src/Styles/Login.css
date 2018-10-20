@@ -18,5 +18,6 @@ body {
 }
 
 .LoginContent {
+  margin: 1rem, 1rem;
   font-size: 30px;
 }
