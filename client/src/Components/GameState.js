@@ -9,7 +9,7 @@ export default class GameState extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            precentage: {africa:0, na:1, sa:0, asia:0, eu:0, pacific:0},
+            percentage: {africa:0, na:1, sa:0, asia:0, eu:0, pacific:0},
             factories: {africa:0, na:1, sa:0, asia:0, eu:0, pacific:0},
             skills: {bribe:1, pr:1, ads:1, product:1, profit:1},
             scores: {money:1000000, reputation:1, efficiency:1},
@@ -20,6 +20,7 @@ export default class GameState extends React.Component {
             isFactoryChanged: false,
             factoryChange: [0, 0, 0, 0, 0],
         }
+        this.endGame = this.endGame.bind(this);
         this.changeSkills = this.changeSkills.bind(this);
         this.changeFactory = this.changeFactory.bind(this);
     };
@@ -35,7 +36,7 @@ export default class GameState extends React.Component {
         clearInterval(this.timerID);
     }
 
-    changeFactory(factoryChange) {
+    changeFactory(e,factoryChange) {
         const sc = this.state.scores;
         if (sc.money > 100) {
             this.setState({
@@ -49,9 +50,9 @@ export default class GameState extends React.Component {
         }
     }
 
-    updateFactory(state) {
-        const f = state.factories;
-        const c = state.factoryChange;
+    updateFactory() {
+        const f = this.state.factories;
+        const c = this.state.factoryChange;
         this.setState({
             isFactoryChanged: false,
             factories: {
@@ -65,7 +66,7 @@ export default class GameState extends React.Component {
         });
     }
 
-    changeSkills(skillChange) {
+    changeSkills(e,skillChange) {
         const sc = this.state.scores;
         if (sc.money > 100) {
             this.setState({
@@ -109,7 +110,7 @@ export default class GameState extends React.Component {
     }
 
     updatePercen(past) {
-        const p = past.precentage;
+        const p = past.percentage;
         const f = past.factories;
         const e = past.scores.efficiency;
         const sk = past.skills;
@@ -118,6 +119,7 @@ export default class GameState extends React.Component {
             f.na+sk.pr, 
             f.sa+sk.ads+sk.product, 
             f.asia+sk.ads, 
+            f.eu+sk.pr+sk.ads,
             f.pacific+sk.product
         ];
         const c = temps.map((temp) => temp * e / 10)
@@ -156,14 +158,14 @@ export default class GameState extends React.Component {
     tick() {
         this.setState((state) => ({
             scores: this.updateScores(state),
-            precentage: this.updatePercen(state),
+            percentage: this.updatePercen(state),
             events: this.updateEvent(state.scores)
           }));
     }
 
     endGame() {
         const sc = this.state.scores;
-        const pc = this.state.precentage;
+        const pc = this.state.percentage;
         if (sc.money === 0) {
             clearInterval(this.timerID);
             return "bankrupt";
@@ -186,17 +188,22 @@ export default class GameState extends React.Component {
             this.updateFactory();
         }
         const scores = this.state.scores;
+        const skills = this.state.skills;
+        const events = this.state.events;
+        const factories = this.state.factories;
+        const percentage = this.state.percentage;
         const gameState = this.endGame();
         return (
             <div>
                 <App 
-                // gameState = {gameState}
-                // changeSkills = {this.changeSkills} 
-                // changeFactory = {this.changeFactory} 
-                // events = {this.state.events}
+                gameState = {gameState}
+                changeSkills = {this.changeSkills} 
+                changeFactory = {this.changeFactory} 
+                events = {events}
                 scores = {scores}
-                // skills = {this.state.skills}
-                // percentages = {this.state.percentages}
+                factories = {factories}
+                skills = {skills}
+                percentage = {percentage}
                 />
             </div>
         );
