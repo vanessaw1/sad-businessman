@@ -22,12 +22,21 @@ class App extends React.Component {
     constructor(props) {
         super(props);
     }
+    sum(f) {
+        const v = Math.round((f.asia + f.na + f.sa + f.pacific + f.africa + f.eu) * 100)/100;
+        return v;
+    }
     render() {
+        const sc = this.props.scores;
+        const pc = this.props.percentage;
+        const f = this.props.factories;
+        const destructionSum = this.sum(pc);
+        const factorySum = this.sum(f);
         return (
             <div> 
             <Router>
                 <div>
-                    <Header money={this.props.scores.money} factories={10} reputation={10} destruction={10} />
+                    <Header money={sc.money} factories={factorySum} reputation={sc.reputation} destruction={destructionSum} />
                     <Sidebar />
                     <div className="Content">
                         <Route path="/overview" render={(props) => 
