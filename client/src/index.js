@@ -44,7 +44,7 @@ class App extends React.Component {
                     </div>
                     <div>
                         <Route path="/login" component={Login} />
-                        <Route path="/main" component={Main} />
+                        <Route path="/main" component={Main money={10} factories={10} reputation={10}} />
                         <Route path="/map" component={WorldMap} />
                         <Route path="/skillpoints" component={Skillpoints} />
                         <Route path="/factories" component={Factories} />
