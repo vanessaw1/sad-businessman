@@ -1,30 +1,27 @@
 .Welcome {
   font-size: 30px;
-  padding-top: 2rem;
-  margin-left: 1rem;
-  margin-right: 2rem;
+  padding-top: 10px;
+  margin: 10px 10px;
+  color: mediumvioletred;
+}
+
+.Images {
+  position: relative;
 }
 
 .KCAMM {
-  position: absolute;
-  top: 190px;
-  left: 100px;
-  height: 340px;
-  width: 340px;
-  border: None;
-  border-radius: 8px;
-  opacity: 0.5;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  max-width:300px;
+  max-height:300px;
+  margin: 0 10px;
+}
+
+.Overlook {
+  max-height:300px;
+  margin: 0 10px;
 }
 
 .ENDE {
-  position: absolute;
-  top: 210px;
-  left: 600px;
-  height:300px;
-  width: 400px;
-  border: None;
-  border-radius: 8px;
-  opacity: 0.5;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  max-height:300px;
+  max-width: 400px;
+  margin: 0 10px;
 }
