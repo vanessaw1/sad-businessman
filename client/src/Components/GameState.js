@@ -36,7 +36,7 @@ export default class GameState extends React.Component {
         clearInterval(this.timerID);
     }
 
-    changeFactory(factoryChange) {
+    changeFactory(e,factoryChange) {
         const sc = this.state.scores;
         if (sc.money > 100) {
             this.setState({
@@ -50,9 +50,9 @@ export default class GameState extends React.Component {
         }
     }
 
-    updateFactory(state) {
-        const f = state.factories;
-        const c = state.factoryChange;
+    updateFactory() {
+        const f = this.state.factories;
+        const c = this.state.factoryChange;
         this.setState({
             isFactoryChanged: false,
             factories: {
@@ -66,7 +66,7 @@ export default class GameState extends React.Component {
         });
     }
 
-    changeSkills(skillChange) {
+    changeSkills(e,skillChange) {
         const sc = this.state.scores;
         if (sc.money > 100) {
             this.setState({
@@ -188,6 +188,8 @@ export default class GameState extends React.Component {
             this.updateFactory();
         }
         const scores = this.state.scores;
+        const skills = this.state.skills;
+        const events = this.state.events;
         const factories = this.state.factories;
         const percentage = this.state.percentage;
         const gameState = this.endGame();
@@ -195,12 +197,12 @@ export default class GameState extends React.Component {
             <div>
                 <App 
                 gameState = {gameState}
-                // changeSkills = {this.changeSkills} 
-                // changeFactory = {this.changeFactory} 
-                // events = {this.state.events}
+                changeSkills = {this.changeSkills} 
+                changeFactory = {this.changeFactory} 
+                events = {events}
                 scores = {scores}
                 factories = {factories}
-                // skills = {this.state.skills}
+                skills = {skills}
                 percentage = {percentage}
                 />
             </div>
