@@ -9,6 +9,7 @@ import Factories from './Factories';
 import Inbox from './Inbox';
 import './GameState';
 import './index.css';
+import GameState from "./GameState.js"
 
 class App extends React.Component {
     render() {
