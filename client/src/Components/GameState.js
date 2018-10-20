@@ -1,4 +1,6 @@
 import React from 'react';
+import App from './App.js'
+// import '../Styles/App.css';
 
 // GameState.props = {isSkillChanged: bool, skillChange: [int,int,int,int,int]}
 export default class GameState extends React.Component {
@@ -74,6 +76,7 @@ export default class GameState extends React.Component {
         return (
             <div> 
                 <h1>The businessman has money {this.state.scores.money}.</h1>
+                <App />
             </div>
         );
     }

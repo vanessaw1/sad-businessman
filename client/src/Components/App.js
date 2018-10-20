@@ -7,9 +7,6 @@ import WorldMap from './WorldMap.js';
 import Skillpoints from './Skillpoints.js';
 import Factories from './Factories.js';
 import Inbox from './Inbox.js';
-import '../GameState.js';
-import '../Styles/App.css';
-// import GameState from "./GameState.js"
 
 class App extends React.Component {
     render() {
