@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Main from './Main.js'
+import Login from './Login.js';
 import WorldMap from './WorldMap.js';
 import Skillpoints from'./Skillpoints.js';
 import Factories from './Factories';
@@ -13,7 +15,7 @@ class App extends React.Component {
         return (
             <Router>
                 <div className="App">
-                    <div>
+                    <div className="Sidebar">
                         <Link to="/main">
                             <button>   
                                 Main
@@ -41,25 +43,12 @@ class App extends React.Component {
                         </Link>
                     </div>
                     <div>
+                        <Route path="/login" component={Login} />
                         <Route path="/main" component={Main} />
                         <Route path="/map" component={WorldMap} />
                         <Route path="/skillpoints" component={Skillpoints} />
                         <Route path="/factories" component={Factories} />
                         <Route path="/inbox" component={Inbox} />
-                    </div>
-                </div>
-            </Router>
-        );
-    }
-}
-
-class Main extends React.Component {
-    render() {
-        return (
-            <Router>
-                <div className="App">
-                    <div>
-                        This is the main page
                     </div>
                 </div>
             </Router>

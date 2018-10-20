@@ -1,13 +1,13 @@
 import React from 'react';
 
-class Inbox extends React.Component {
+class Login extends React.Component {
     render() {
         return (
             <div>
-                This is your inbox
+                Please enter your login info
             </div>
         );
     }
 }
 
-export default Inbox;
+export default Login;
