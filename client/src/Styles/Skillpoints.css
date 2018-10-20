@@ -10,3 +10,13 @@
     width: 100%;
     display: block;
 }
+
+.Upgrades {
+    font-size: 20px;
+    padding-bottom: 10px;
+    color: deeppink;
+}
+
+.Intro {
+    font-size: 20px;
+}

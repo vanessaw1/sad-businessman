@@ -4,7 +4,7 @@ import '../Styles/Skillpoints.css';
 class Skillpoints extends React.Component {
     render() {
         return (
-            <div>
+            <div className="Intro">
                 These are your current upgrades. You can purchase more upgrades from here.
                 <div className="Upgrades">
                     <div>
