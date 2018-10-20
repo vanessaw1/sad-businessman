@@ -186,8 +186,6 @@ export default class GameState extends React.Component {
             this.updateFactory();
         }
         const scores = this.state.scores;
-        alert(scores.money);
-        alert("????")
         const gameState = this.endGame();
         return (
             <div>
