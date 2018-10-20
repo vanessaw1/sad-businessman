@@ -1,7 +1,7 @@
 import React from 'react';
 import Login from './Login.js'
 import '../Styles/Header.css';
-
+import logo from "../Resources/BRHF18.png";
 class Header extends React.Component {
     render() {
         return (
@@ -34,7 +34,7 @@ class Header extends React.Component {
                 <div className="Login">
                     {Login}
                 </div>
-                <img src="../BRHF18.png"
+                <img src={logo}
                     alt="LOGO" width="50" height="100" />
             </div>
         );
