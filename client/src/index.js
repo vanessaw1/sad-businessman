@@ -1,22 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import WorldMap from './WorldMap.js';
+import Skillpoints from'./Skillpoints.js';
+import Factories from './Factories';
+import Inbox from './Inbox';
+import './GameState';
 import './index.css';
-import GameState from "./GameState.js"
 
 class App extends React.Component {
     render() {
         return (
             <Router>
                 <div className="App">
-                    <GameState />
                     <div>
-                        <Link to="/main">Main</Link>
-                        <Link to="/map">Map</Link>
+                        <Link to="/main">Main</Link> | 
+                        <Link to="/map">Map</Link> | 
+                        <Link to="/skillpoints">Skillpoints</Link> | 
+                        <Link to="/factories">Factories</Link> | 
+                        <Link to="/inbox">Inbox</Link>
                     </div>
                     <div>
                         <Route path="/main" component={Main} />
-                        <Route path="/map" component={Map} />
+                        <Route path="/map" component={WorldMap} />
+                        <Route path="/skillpoints" component={Skillpoints} />
+                        <Route path="/factories" component={Factories} />
+                        <Route path="/inbox" component={Inbox} />
                     </div>
                 </div>
             </Router>
@@ -38,15 +47,7 @@ class Main extends React.Component {
     }
 }
 
-class Map extends React.Component {
-    render() {
-        return (
-            <div>
-                This is the map
-            </div>
-        );
-    }
-}
+
 
 // ========================================
 // export default App;
