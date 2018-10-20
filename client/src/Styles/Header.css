@@ -9,7 +9,7 @@
 }
 
 .Header {
-    background-color: rgb(122, 45, 86);
+    background-color: black;
     position: absolute;
     top: 0;
     left : 0;
@@ -23,8 +23,8 @@
   font-size: 25px;
   height: 100px;
   position: absolute;
-  width: 50%;
-  margin-left: 28%;
+  width: 60%;
+  margin-left: 25%;
   margin-right: 25%;
   margin-top: 0.3rem;
   margin-bottom: 0.3rem;

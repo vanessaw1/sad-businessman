@@ -5,9 +5,9 @@ class WorldMap extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="MapContent">
                 This is a map of the world.
-                </div>
+            </div>
         );
     }
 }

@@ -4,7 +4,7 @@ import '../Styles/Overview.css';
 class Overview extends React.Component {
     render() {
         return (
-            <div className="Overview">
+            <div className="OverviewContent">
                 <div>
                     Here is an overview of your company
                 </div>

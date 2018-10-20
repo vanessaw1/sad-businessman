@@ -16,3 +16,7 @@ body {
   font-family: 'doris';
   color: deeppink;
 }
+
+.LoginContent {
+  font-size: 30px;
+}

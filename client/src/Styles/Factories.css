@@ -10,13 +10,14 @@
 
 .FactoriesContent {
   font-family: 'doris';
-  font-weight: bold;
   margin: 1rem 1rem;
   font-size: 30px;
   color: deeppink;
 }
 
 button {
+  margin-left: 2rem;
+  margin-right: 2rem;
   font-size: 20px;
   font-weight: bold;
   font-family: 'neuron';

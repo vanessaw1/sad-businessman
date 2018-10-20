@@ -36,27 +36,27 @@ class Skillpoints extends React.Component {
                 <div className="Upgrades">
                     <div>
                         <button className="dec" onClick={this.handleBribeDec}>-</button>
-                        Bribes   {skills.bribe}
+                        Bribes:   {skills.bribe}
                         <button className="inc" onClick={this.handleBribeInc}>+</button>
                     </div>
                     <div>
                         <button className="dec" onClick={this.handlePRDec}>-</button>
-                        PR (Public Relation) {skills.pr}
+                        PR (Public Relation): {skills.pr}
                         <button className="inc" onClick={this.handlePRInc}>+</button>
                     </div>
                     <div>
                         <button className="dec" onClick={this.handleAdsDec}>-</button>
-                        Advertisement Effectiveness {skills.ads}
+                        Advertisement Effectiveness: {skills.ads}
                         <button className="inc" onClick={this.handleAdsInc}>+</button>
                     </div>
                     <div>
                         <button className="dec" onClick={this.handleProductDec}>-</button>
-                        Product Output {skills.product}
+                        Product Output: {skills.product}
                         <button className="inc" onClick={this.handleProductInc}>+</button>
                     </div>
                     <div>
                         <button className="dec" onClick={this.handleProfitDec}>-</button>
-                        Profit Margin {skills.profit}
+                        Profit Margin: {skills.profit}
                         <button className="inc" onClick={this.handleProfitInc}>+</button>
                     </div>
                 </div>
