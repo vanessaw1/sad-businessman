@@ -1,6 +1,6 @@
 import React from 'react';
 import App from './App.js'
-// import '../Styles/App.css';
+import '../Styles/App.css';
 import event from '../event.json';
 
 const moneEvent = event[0];

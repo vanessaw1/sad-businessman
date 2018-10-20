@@ -1,8 +1,31 @@
 .Header {
-    background-color: lightgray;
+    background-color: rgb(122, 45, 86);
     position: absolute;
     top: 0;
     left : 0;
     right : 0;
     height:100px;
   }
+
+.Stats {
+  border-color: rgb(122, 45, 86);
+  font-size: 25px;
+  height: 100px;
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+  text-align: center; 
+  color:  deeppink;
+  border-collapse:collapse;
+  border: None;
+}
+
+.Stats th {
+  font-size: 30px;
+  border: None;
+}
+
+.Stats td {
+  font-size: 20px;
+  border: None;
+}

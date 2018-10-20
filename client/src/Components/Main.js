@@ -8,7 +8,7 @@ class Main extends React.Component {
                 <div>
                     Here is an overview of your company
                 </div>
-                <table className="Stats">
+                {/* <table className="Stats">
                     <tr>
                         <th>Money</th>
                         <th>Factories</th>
@@ -21,7 +21,7 @@ class Main extends React.Component {
                         <th>{this.props.reputation}</th>
                         <th>{this.props.destruction}</th>
                     </tr>
-                </table>
+                </table> */}
             </div>
         );
     }

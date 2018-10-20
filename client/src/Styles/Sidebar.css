@@ -8,10 +8,12 @@
 }
 
 button {
+  position: relative;
+  top: 50px;
   border-radius: 10px;
   background-color: white;
-  border: 3px solid #4CAF50;
-  color: black;
+  border: 5px solid deeppink;
+  color: mediumvioletred;
   padding: 20px 30px;
   text-align: center;
   display: inline-block;
@@ -25,8 +27,6 @@ button {
 }
   
 button:hover {
-  border-radius: 10px;
-  background-color: #4CAF50;
-  padding: 20px 30px;
-  font-size: 20px;
+  background-color: deeppink;
+  color: purple;
 }
