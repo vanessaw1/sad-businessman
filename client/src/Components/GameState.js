@@ -185,17 +185,20 @@ export default class GameState extends React.Component {
         if (this.state.isFactoryChanged === true) {
             this.updateFactory();
         }
+        const scores = this.state.scores;
+        alert(scores.money);
+        alert("????")
         const gameState = this.endGame();
         return (
             <div>
-                <h1>The businessman has money {this.state.scores.money}.</h1>
-                <h1>The businessman has money event {this.state.events.money}.</h1>
-                <h1>The businessman is at stage {gameState}.</h1>
                 <App 
-                changeSkills = {this.changeSkills} 
-                changeFactory = {this.changeFactory} 
-                events = {this.state.events}
-                gameState = {gameState}
+                // gameState = {gameState}
+                // changeSkills = {this.changeSkills} 
+                // changeFactory = {this.changeFactory} 
+                // events = {this.state.events}
+                scores = {scores}
+                // skills = {this.state.skills}
+                // percentages = {this.state.percentages}
                 />
             </div>
         );
