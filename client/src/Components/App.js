@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Header from './Header.js'
 import Sidebar from './Sidebar.js'
-import Main from './Main.js'
+import Overview from './Overview.js'
 import WorldMap from './WorldMap.js';
 import Skillpoints from './Skillpoints.js';
 import Factories from './Factories.js';
@@ -23,10 +23,10 @@ class App extends React.Component {
         return (
             <Router>
                 <div>
-                    <Header money={10} factories={10} reputation={10} destruction={10}/>
-                    <Sidebar/>
+                    <Header money={10} factories={10} reputation={10} destruction={10} />
+                    <Sidebar />
                     <div className="Content">
-                        <Route path="/main" render={(props) => <Main money={10} factories={10} reputation={10} destruction={10}/>} />
+                        <Route path="/overview" render={(props) => <Overview money={10} factories={10} reputation={10} destruction={10} />} />
                         <Route path="/map" component={WorldMap} />
                         <Route path="/skillpoints" component={Skillpoints} />
                         <Route path="/factories" component={Factories} />
