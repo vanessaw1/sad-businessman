@@ -7,7 +7,7 @@
   /* background-color: lightblue; */
 }
 
-button {
+.nav {
   position: relative;
   top: 50px;
   border-radius: 10px;
