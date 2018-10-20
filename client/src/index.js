@@ -50,7 +50,9 @@ class App extends React.Component {
                     <div className="Content">
                         <Route path="/login" component={Login} />
                         <Route path="/main" component={Main} />
-                        <Route path="/map" component={WorldMap} />
+                        <div className="WorldMap">
+                            <Route path="/map" component={WorldMap} />
+                        </div>
                         <Route path="/skillpoints" component={Skillpoints} />
                         <Route path="/factories" component={Factories} />
                         <Route path="/inbox" component={Inbox} />

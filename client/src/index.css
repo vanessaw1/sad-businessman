@@ -10,7 +10,7 @@ button {
   background-color: white;
   border: 3px solid #4CAF50;
   color: black;
-  padding: 15px 30px;
+  padding: 20px 30px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -18,23 +18,17 @@ button {
   cursor: pointer;
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
-  margin: 10px;
+  margin: 12px;
   width: 100%;
   display: block;
 
 }
 
 button:hover {
-  border-radius: 15px;
+  border-radius: 13px;
   background-color: #4CAF50;
-  border: 3px solid #4CAF50;
-  color: black;
-  padding: 18px 36px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 23px;
-  display: block;
+  padding: 24px 36px;
+  font-size: 22px;
 }
 
 .Content {
@@ -42,6 +36,7 @@ button:hover {
   position: absolute;
   top: 10%;
   bottom: 10%;
+  font-size: 20px;
 }
 
 /* input[type=text], input[type=password] {
