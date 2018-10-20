@@ -2,9 +2,9 @@
     border-radius: 10px;
     background-color: white;
     border: 1px solid deeppink;
-    color: mediumvioletred;
-    padding: 2px 3px;
+    padding: 20px 30px;
     text-align: center;
+    color: mediumvioletred;
     cursor: pointer;
     margin: 10px 0px;
     width: 100%;
@@ -19,4 +19,5 @@
 
 .Intro {
     font-size: 20px;
+    color: mediumvioletred;
 }
