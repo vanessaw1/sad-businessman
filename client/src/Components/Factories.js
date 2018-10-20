@@ -12,12 +12,12 @@ class Factories extends React.Component {
         this.handlePacific = this.handlePacific.bind(this);
     }
 
-    handleAfrica(e) {this.props.changeFactories([1,0,0,0,0,0])}
-    handleNA(e) {this.props.changeFactories([0,1,0,0,0,0])}
-    handleSA(e) {this.props.changeFactories([0,0,1,0,0,0])}
-    handleAsia(e) {this.props.changeFactories([0,0,0,1,0,0])}
-    handleEurope(e) {this.props.changeFactories([0,0,0,0,1,0])}
-    handlePacific(e) {this.props.changeFactories([0,0,0,0,0,1])}
+    handleAfrica(e) {this.props.changeFactory([1,0,0,0,0,0])}
+    handleNA(e) {this.props.changeFactory([0,1,0,0,0,0])}
+    handleSA(e) {this.props.changeFactory([0,0,1,0,0,0])}
+    handleAsia(e) {this.props.changeFactory([0,0,0,1,0,0])}
+    handleEurope(e) {this.props.changeFactory([0,0,0,0,1,0])}
+    handlePacific(e) {this.props.changeFactory([0,0,0,0,0,1])}
 
     render() {
 
@@ -30,27 +30,27 @@ class Factories extends React.Component {
                 These are your factories. You can manage your factories from here.
                 <div>
                     Africa
-                    <button>Add Factory</button>
+                    <button onClick={this.handleAfrica}>Add Factory</button>
                 </div>
                 <div>
                     North America
-                    <button>Add Factory</button>
+                    <button onClick={this.handleNA}>Add Factory</button>
                 </div>
                 <div>
                     South America
-                    <button>Add Factory</button>
+                    <button onClick={this.handleSA}>Add Factory</button>
                 </div>
                 <div>
                     Asia
-                    <button>Add Factory</button>
+                    <button onClick={this.handleAsia}>Add Factory</button>
                 </div>
                 <div>
                     Europe
-                    <button>Add Factory</button>
+                    <button onClick={this.handleEurope}>Add Factory</button>
                 </div>
                 <div>
                     Pacific
-                    <button>Add Factory</button>
+                    <button onClick={this.handlePacific}>Add Factory</button>
                 </div>
             </div>
         );
