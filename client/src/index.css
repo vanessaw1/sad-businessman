@@ -1,0 +1,38 @@
+.App {
+  /* float: left; */
+  position: absolute;
+  top: 20%;
+}
+
+button {
+  border-radius: 10px;
+  background-color: white;
+  border: 3px solid #4CAF50;
+  color: black;
+  padding: 20px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  top: 10%;
+  width: 100%;
+  display: block;
+
+}
+
+button:hover {
+  border-radius: 15px;
+  background-color: #4CAF50;
+  border: 3px solid #4CAF50;
+  color: black;
+  padding: 25px 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 26px;
+  display: block;
+
+}

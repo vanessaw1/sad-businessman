@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import WorldMap from './WorldMap.js';
-import Skillpoints from'./Skillpoints.js';
+import Skillpoints from './Skillpoints.js';
 import Factories from './Factories';
 import Inbox from './Inbox';
 import './GameState';
@@ -15,27 +15,27 @@ class App extends React.Component {
                 <div className="App">
                     <div>
                         <Link to="/main">
-                            <button>   
+                            <button className="MainButton">
                                 Main
                             </button>
                         </Link>
                         <Link to="/map">
-                            <button>   
+                            <button className="MapButton">
                                 Map
                             </button>
                         </Link>
                         <Link to="/skillpoints">
-                            <button>   
+                            <button className="SkillpointsButton">
                                 Skillpoints
                             </button>
                         </Link>
                         <Link to="/factories">
-                            <button>   
+                            <button className="FactoriesButton">
                                 Factories
                             </button>
                         </Link>
                         <Link to="/inbox">
-                            <button>   
+                            <button className="InboxButton">
                                 Inbox
                             </button>
                         </Link>
