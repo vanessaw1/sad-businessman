@@ -1,0 +1,43 @@
+[
+
+    [
+        {
+            "title": "Price Soaring",
+            "content": "Your product really hit the market.",
+            "choice": ["Sounds good!"],
+            "response": [{
+                "skills": [0,0,0,0,1],
+                "scores": [0,0,10]
+                }]
+        }
+    ], 
+
+    [
+        {
+            "title": "Global Clean Act",
+            "content": "UN is about to enact a Clean Act.",
+            "choice": ["Ok.","'Network' it down!"],
+            "response": [{
+                "skills": [0,-1,0,0,0],
+                "scores": [-100,0,-100]
+                },{
+                "skills": [0,0,0,0,0],
+                "scores": [-1000,100,0]
+                }]
+        }
+    ],
+    [
+        {
+            "title": "Time to go abroad",
+            "content": "Multiple countries are seeking for foreign investment due to the economic warming",
+            "choice": ["Meh.","Let's go abroad!"],
+            "response": [{
+                "skills": [0,0,0,0,-1],
+                "scores": [0,0,0]
+                },{
+                "skills": [0,0,0,0,1],
+                "scores": [-100,10,100]
+                }]
+        }
+    ]
+]

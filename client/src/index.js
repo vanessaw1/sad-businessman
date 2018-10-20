@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './Components/App.js'
+import GameState from './Components/GameState'
 
 ReactDOM.render(
-    <App />,
+    <GameState />,
     document.getElementById('root')
 );
