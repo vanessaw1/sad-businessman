@@ -1,14 +1,15 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Main from './Main.js'
 import Header from './Header.js'
-import Login from './Login.js';
+// import Sidebar from './Sidebar.js'
+import Main from './Main.js'
 import WorldMap from './WorldMap.js';
 import Skillpoints from './Skillpoints.js';
 import Factories from './Factories.js';
 import Inbox from './Inbox.js';
 import '../GameState.js';
 import '../Styles/App.css';
+import '../Styles/Sidebar.css';
 // import GameState from "./GameState.js"
 
 class App extends React.Component {
@@ -16,9 +17,8 @@ class App extends React.Component {
         return (
             <Router>
                 <div>
-                    <div className="Header">
-                        {Header}
-                    </div>
+                    <Header money={10} factories={10} reputation={10} destruction={10}/>
+                    {/* <Sidebar/> */}
                     <div className="Sidebar">
                         <Link to="/main">
                             <button className="MainButton">
@@ -47,8 +47,7 @@ class App extends React.Component {
                         </Link>
                     </div>
                     <div className="Content">
-                        <Route path="/login" component={Login} />
-                        <Route path="/main" render={(props) => <Main money={10} factories={10} reputation={10}/>} />
+                        <Route path="/main" render={(props) => <Main money={10} factories={10} reputation={10} destruction={10}/>} />
                         <Route path="/map" component={WorldMap} />
                         <Route path="/skillpoints" component={Skillpoints} />
                         <Route path="/factories" component={Factories} />
