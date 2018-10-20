@@ -10,7 +10,7 @@ export default class GameState extends React.Component {
             percentage: {africa:0, na:1, sa:0, asia:0, eu:0, pacific:0},
             factories: {africa:0, na:1, sa:0, asia:0, eu:0, pacific:0},
             skills: {bribe:1, pr:1, ads:1, product:1, profit:1},
-            scores: {money:1000000, reputation:1, efficiency:1},
+            scores: {money:1000000, reputation:100, efficiency:1},
             isEvents: false,
             events: { money: -1, reputation: -1, efficiency: -1 },
             isFactoryChanged: false,
@@ -18,7 +18,6 @@ export default class GameState extends React.Component {
             skillPointLeft: 35
         }
         this.endGame = this.endGame.bind(this);
-        this.beep = this.beep.bind(this);
         this.changeSkill = this.changeSkill.bind(this);
         this.changeFactory = this.changeFactory.bind(this);
     };
@@ -34,35 +33,35 @@ export default class GameState extends React.Component {
         clearInterval(this.timerID);
     }
 
-    changeFactory(e,factoryChange) {
+    changeFactory(c) {
         const sc = this.state.scores;
+        const f = this.state.factories;
         
-        if (sc.money > 100) {
+        const africa = f.africa + c[0];
+        const na = f.na + c[1];
+        const sa = f.sa + c[2];
+        const asia = f.asia + c[3];
+        const eu = f.eu + c[4];
+        const pacific = f.pacific + c[5];
+
+        if (sc.money > 100)
+            {
             this.setState({
                 scores: {
-                    money: sc.money - 100, 
+                    money: sc.money - 500, 
                     reputation: sc.reputation, 
                     efficiency: sc.efficiency
                 },
-                isFactoryChanged: true, 
-                factoryChange: factoryChange});
+                factories: {
+                    africa: africa,
+                    na: na,
+                    sa: sa,
+                    asia: asia,
+                    eu: eu,
+                    pacific: pacific
+                }
+            });
         }
-    }
-
-    updateFactory() {
-        const f = this.state.factories;
-        const c = this.state.factoryChange;
-        this.setState({
-            isFactoryChanged: false,
-            factories: {
-                africa: f.africa + c[0],
-                na: f.na + c[1],
-                sa: f.sa + c[2],
-                asia: f.asia + c[3],
-                eu: f.eu + c[4],
-                pacific: f.pacific + c[5]
-            }
-        });
     }
 
     changeSkill(c) {
@@ -74,15 +73,17 @@ export default class GameState extends React.Component {
         const ads = s.ads + c[2];
         const product = s.product + c[3];
         const profit = s.profit + c[4];
-        const temp = [bribe, pr, ads, product, profit].filter(skill => skill < 0 || skill > 20)
+        const temp_ = [bribe, pr, ads, product, profit]
+        const temp = temp_.filter(skill => skill < 0 || skill > 20)
         const point = c.reduce((a, b) => a + b, 0);
-        if (l > 0 && temp.length === 0 && sc.money > 100)
+        if ((l > 0 && temp.length === 0 || l === 0 &&  temp.length !== 0)
+         && sc.money > 100)
             {
             this.setState({
                 scores: {
-                    money: sc.money - 100, 
+                    money: sc.money - 1000, 
                     reputation: sc.reputation, 
-                    efficiency: sc.efficiency
+                    efficiency: sc.efficiency + (temp_[0] + temp_[4]) / 100
                 },
                 skills: {
                     bribe: bribe,
@@ -100,11 +101,11 @@ export default class GameState extends React.Component {
         const f = past.factories;
         const sc = past.scores;
         const sk = past.skills;
-        var moChange = sc.reputation * (f.africa + f.na + f.sa + f.asia + f.eu + f.pacific);
-        var reChange = sc.efficiency / (sk.bribe + sk.pr + sk.ads + sk.product)
+        var moChange = sc.reputation * (f.africa + f.na + f.sa + f.asia + f.eu + f.pacific) / 99;
+        var reChange = sc.efficiency / (sk.pr + sk.ads + sk.product);
         var newScore = {
             money: Math.round((sc.money + moChange)*100) / 100, 
-            reputation: Math.round((sc.reputation + reChange)*100) / 100, 
+            reputation: Math.round((sc.reputation - reChange)*100) / 100, 
             efficiency: sc.efficiency };
         return newScore;
     }
@@ -115,14 +116,14 @@ export default class GameState extends React.Component {
         const e = past.scores.efficiency;
         const sk = past.skills;
         const temps = [
-            f.africa+sk.bribe, 
-            f.na+sk.pr, 
-            f.sa+sk.ads+sk.product, 
-            f.asia+sk.ads, 
-            f.eu+sk.pr+sk.ads,
-            f.pacific+sk.product
+            f.africa * sk.bribe, 
+            f.na * sk.pr, 
+            f.sa * (sk.ads + sk.product) / 2, 
+            f.asia * sk.ads, 
+            f.eu * (sk.pr + sk.ads) / 2,
+            f.pacific * sk.product
         ];
-        const c = temps.map((temp) => temp * e / 10)
+        const c = temps.map((temp) => temp * e / 600)
         var newPercen = {
             africa:p.africa+c[0], 
             na:p.na+c[1], 
@@ -140,10 +141,6 @@ export default class GameState extends React.Component {
             return money
         }
         return -1;
-    }
-
-    beep(e){
-        alert("beep");
     }
 
     updateEvent(past) {
@@ -170,7 +167,7 @@ export default class GameState extends React.Component {
     endGame() {
         const sc = this.state.scores;
         const pc = this.state.percentage;
-        if (sc.money === 0) {
+        if (sc.money === 0 && sc.reputation === 0) {
             clearInterval(this.timerID);
             return "bankrupt";
         }
@@ -185,9 +182,6 @@ export default class GameState extends React.Component {
     }
 
     render() {
-        if (this.state.isFactoryChanged === true) {
-            this.updateFactory();
-        }
         const scores = this.state.scores;
         const skills = this.state.skills;
         const events = this.state.events;
@@ -206,7 +200,6 @@ export default class GameState extends React.Component {
                 factories = {factories}
                 skills = {skills}
                 percentage = {percentage}
-                beep = {this.beep}
                 skillPointLeft = {skillPointLeft}
                 />
             </div>
