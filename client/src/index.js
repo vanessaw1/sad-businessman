@@ -14,11 +14,31 @@ class App extends React.Component {
             <Router>
                 <div className="App">
                     <div>
-                        <Link to="/main">Main</Link> | 
-                        <Link to="/map">Map</Link> | 
-                        <Link to="/skillpoints">Skillpoints</Link> | 
-                        <Link to="/factories">Factories</Link> | 
-                        <Link to="/inbox">Inbox</Link>
+                        <Link to="/main">
+                            <button>   
+                                Main
+                            </button>
+                        </Link>
+                        <Link to="/map">
+                            <button>   
+                                Map
+                            </button>
+                        </Link>
+                        <Link to="/skillpoints">
+                            <button>   
+                                Skillpoints
+                            </button>
+                        </Link>
+                        <Link to="/factories">
+                            <button>   
+                                Factories
+                            </button>
+                        </Link>
+                        <Link to="/inbox">
+                            <button>   
+                                Inbox
+                            </button>
+                        </Link>
                     </div>
                     <div>
                         <Route path="/main" component={Main} />
@@ -46,11 +66,6 @@ class Main extends React.Component {
         );
     }
 }
-
-
-
-// ========================================
-// export default App;
 
 ReactDOM.render(
     <App />,
