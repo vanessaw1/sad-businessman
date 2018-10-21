@@ -12,7 +12,7 @@ class Sidebar extends React.Component {
                     </button>
                 </Link>
                 <Link to="/map" style={{ textDecoration: 'none' }}>
-                    <button className="Map nav">
+                    <button className="Map nav" onClick={this.props.onClick}>
                         Map
                     </button>
                 </Link>

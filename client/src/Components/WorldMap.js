@@ -1,12 +1,11 @@
 import React from 'react';
-import '../Styles/WorldMap.css';
 
 class WorldMap extends React.Component {
 
     render() {
+        var styles = {width: "640px", height: "480px", zIndex: 999}
         return (
-            <div className="MapContent">
-                This is a map of the world.
+            <div>
             </div>
         );
     }

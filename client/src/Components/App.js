@@ -9,12 +9,19 @@ import WorldMap from './WorldMap.js';
 import Skillpoints from './Skillpoints.js';
 import Factories from './Factories.js';
 import Inbox from './Inbox.js';
+import Login from './Login';
 import '../Styles/App.css';
 import '../Styles/Sidebar.css';
 
 import event from '../event.json';
 
 class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {isShow: "inline"};
+        this.show = this.show.bind(this);
+    }
+
     sum(f) {
         const v = Math.round((f.asia + f.na + f.sa + f.pacific + f.africa + f.eu) * 100) / 100;
         return v;
@@ -29,6 +36,17 @@ class App extends React.Component {
         }
         return eventList;
     }
+    
+    show(e){
+        alert("???")
+        if (this.state.isShow === "inline") {
+            alert("???")
+            this.setState({isShow: "none"})
+        }
+        else {
+            this.setState({isShow: "inline"})
+        }
+    }
 
     render() {
         const sc = this.props.scores;
@@ -40,24 +58,32 @@ class App extends React.Component {
         const factorySum = this.sum(f);
         const skills = this.props.skills;
         const eventsList = this.fetchEvent(e);
+        const styles = {display: this.state.isShow}
 
         return (
             <div>
+                <button onClick={this.show}>
+                Hide Map
+                </button>
+                <div style={styles}>
+                <div id="background">
+                <img src="https://wallpapersite.com/images/pages/pic_w/12048.jpg" class="stretch" alt="" />
+                </div>
                 <Router>
                     <div>
-                        <EventModal eventsList={eventsList}/>
-                        <Header 
+                        <EventModal eventsList={eventsList} />
+                        <Header
                             money={this.props.scores.money}
                             factories={factorySum}
                             reputation={sc.reputation}
                             destruction={destructionSum}
                         />
-                        <Sidebar />
+                        <Sidebar onClick={this.show}/>
                         <div className="Content">
                             <Route exact path="/" component={Welcome} />
                             <Route path="/overview" render={(props) =>
-                                <Overview 
-                                    money={this.props.moChange} 
+                                <Overview
+                                    money={this.props.moChange}
                                     factories={factorySum}
                                     reputation={this.props.reChange} 
                                     destruction={this.props.peChange}
@@ -66,26 +92,26 @@ class App extends React.Component {
                                     deHistory={this.props.peHistory} 
                                 />} 
                             />
-                            <Route path="/map" component={WorldMap} />
                             <Route path="/skillpoints" render={(props) =>
-                                <Skillpoints 
-                                    skills={skills} 
-                                    beep={this.props.beep} 
+                                <Skillpoints
+                                    skills={skills}
+                                    beep={this.props.beep}
                                     changeSkill={this.props.changeSkill}
                                     skillPointLeft={this.props.skillPointLeft}
                                 />
-                            }/>
-                            <Route path="/factories" render={(props) => 
+                            } />
+                            <Route path="/factories" render={(props) =>
                                 <Factories
                                     factories={f}
                                     changeFactory={this.props.changeFactory}
                                 />} />
                             <Route path="/inbox" component={Inbox} />
+                            <Route path="/login" component={Login} />
                         </div>
                     </div>
                 </Router>
             </div>
-
+            </div>
 
         );
     }

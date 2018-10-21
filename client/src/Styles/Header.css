@@ -59,3 +59,12 @@
   padding: 5px;
   width: 200px;
 }
+
+.Login {
+  position: absolute;
+  right: 30px;
+  top: 10px;
+  font-size: 30px;
+  color: deeppink;
+  font-family: 'neuron';
+}
