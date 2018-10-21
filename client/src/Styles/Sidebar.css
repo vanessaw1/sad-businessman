@@ -6,7 +6,6 @@
 .Sidebar {
   position: absolute;
   top: 100px;
-  z-index: 1;
   width: 200px;
   background-color: transparent;
 }

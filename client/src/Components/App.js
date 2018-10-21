@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Welcome from './Welcome.js'
+import EventModal from './EventModal'
 import Header from './Header.js'
 import Sidebar from './Sidebar.js'
 import Overview from './Overview.js'
@@ -48,6 +49,7 @@ class App extends React.Component {
             <div>
                 <Router>
                     <div>
+                        <EventModal eventsList={eventsList}/>
                         <Header 
                             money={this.props.scores.money}
                             factories={factorySum}

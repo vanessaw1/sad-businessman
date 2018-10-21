@@ -2,15 +2,15 @@
     padding: 20px 30px;
     text-align: center;
     color: rgb(122, 45, 86);
-    cursor: pointer;
     margin: 10px 0px;
     width: 100%;
     display: block;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-button:hover {
+.inc:hover {
     cursor: pointer;
-    border-radius: 5px;
 }
 
 .Upgrades {
