@@ -16,6 +16,12 @@ import '../Styles/Sidebar.css';
 import event from '../event.json';
 
 class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {isShow: "inline"};
+        this.show = this.show.bind(this);
+    }
+
     sum(f) {
         const v = Math.round((f.asia + f.na + f.sa + f.pacific + f.africa + f.eu) * 100) / 100;
         return v;
@@ -30,6 +36,17 @@ class App extends React.Component {
         }
         return eventList;
     }
+    
+    show(e){
+        alert("???")
+        if (this.state.isShow === "inline") {
+            alert("???")
+            this.setState({isShow: "none"})
+        }
+        else {
+            this.setState({isShow: "inline"})
+        }
+    }
 
     render() {
         const sc = this.props.scores;
@@ -41,9 +58,17 @@ class App extends React.Component {
         const factorySum = this.sum(f);
         const skills = this.props.skills;
         const eventsList = this.fetchEvent(e);
+        const styles = {display: this.state.isShow}
 
         return (
             <div>
+                <button onClick={this.show}>
+                Hide Map
+                </button>
+                <div style={styles}>
+                <div id="background">
+                <img src="https://wallpapersite.com/images/pages/pic_w/12048.jpg" class="stretch" alt="" />
+                </div>
                 <Router>
                     <div>
                         <EventModal eventsList={eventsList} />
@@ -53,7 +78,7 @@ class App extends React.Component {
                             reputation={sc.reputation}
                             destruction={destructionSum}
                         />
-                        <Sidebar />
+                        <Sidebar onClick={this.show}/>
                         <div className="Content">
                             <Route exact path="/" component={Welcome} />
                             <Route path="/overview" render={(props) =>
@@ -64,7 +89,9 @@ class App extends React.Component {
                                     destruction={this.props.peChange}
                                 />}
                             />
-                            <Route path="/map" component={WorldMap} />
+                            <Route path="/map" render={(props)=>
+                                <WorldMap />}
+                            />
                             <Route path="/skillpoints" render={(props) =>
                                 <Skillpoints
                                     skills={skills}
@@ -84,7 +111,7 @@ class App extends React.Component {
                     </div>
                 </Router>
             </div>
-
+            </div>
 
         );
     }
