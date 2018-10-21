@@ -1,7 +1,7 @@
 .EventModal.false {
     display: block;
     position: fixed;
-    z-index: 1000;
+    z-index: 10000;
     left: 0;
     top: 0;
     width: 100%;
@@ -24,9 +24,9 @@
 }
 
 .Options {
-  margin-left: 15rem;
-  margin-right: 1rem;
-  margin-top: 2rem;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
   font-size: 23px;
   font-weight: bolder;
   font-family: 'neuron';

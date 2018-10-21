@@ -28,9 +28,10 @@ class Factories extends React.Component {
         this.handlePacific = this.handlePacific.bind(this);
     }
 
-    handleAfrica(e) { 
+    handleAfrica(e) {
         window.appendTo("Tokyo");
-        this.props.changeFactory([1, 0, 0, 0, 0, 0]) }
+        this.props.changeFactory([1, 0, 0, 0, 0, 0])
+    }
     handleNA(e) { this.props.changeFactory([0, 1, 0, 0, 0, 0]) }
     handleSA(e) { this.props.changeFactory([0, 0, 1, 0, 0, 0]) }
     handleAsia(e) { this.props.changeFactory([0, 0, 0, 1, 0, 0]) }
@@ -40,12 +41,11 @@ class Factories extends React.Component {
     createDotLists(citylst, cityname, handle) {
         let dotlsts = []
 
-        // Outer loop to create parent
         for (let i = 0; i < 4; i++) {
             dotlsts.push(
                 <div className={"dot"}>
                     <img className="img-circle"
-                        src={citylst[i]} width="100" height="100">
+                        src={citylst[i]} width="110" height="110">
                     </img>
                     <span className="cityname"> {cityname[i]}</span>
                     <button class="btn" onClick={handle[i]}></button>
@@ -64,9 +64,6 @@ class Factories extends React.Component {
         const eu_num = f.eu
         const pa_num = f.pacific
 
-        // const factoryItems = this.props.factories.map(factory =>
-        //     <li>{factory}</li>
-        // );
         const lst1 = [NYC, Beijing, Lima, Sydney];
         const lst1str = ["NYC", "Beijing", "Lima", "Sydney"];
         const lst1handle = [this.handleNA, this.handleAsia, this.handleSA, this.handlePacific];

@@ -31,16 +31,15 @@ class Skillpoints extends React.Component {
         const skills = this.props.skills;
         return (
             <div className="Intro">
-                These are your current upgrades. You can allocate your points from here.
-                Increasing and decreasing points costs money.
+                These are your current upgrades. You can allocate your points from here.<br />
+                Increasing points costs $1000 and decreasing points costs $500.
                 You have {this.props.skillPointLeft} points left.
                 <div className="Upgrades">
                     <div>
                         <button className="dec" onClick={this.handleBribeDec}>-</button>
                         <button className="inc" onClick={this.handleBribeInc}>+</button>
-                        Bribes:   {skills.bribe}
+                        Bribes: {skills.bribe}
                         <div className="description">
-                            Cost: $1000<br />
                             Bribe the government to put in good words for your company!
                         </div>
                     </div>
@@ -49,7 +48,6 @@ class Skillpoints extends React.Component {
                         <button className="inc" onClick={this.handlePRInc}>+</button>
                         PR (Public Relation): {skills.pr}
                         <div className="description">
-                            Cost: $1000<br />
                             Don't forget to maintain a good image!
                         </div>
                     </div>
@@ -58,7 +56,6 @@ class Skillpoints extends React.Component {
                         <button className="inc" onClick={this.handleAdsInc}>+</button>
                         Advertisement Effectiveness: {skills.ads}
                         <div className="description">
-                            Cost: $1000<br />
                             More advertising means, more consumers!
                         </div>
                     </div>
@@ -67,7 +64,6 @@ class Skillpoints extends React.Component {
                         <button className="inc" onClick={this.handleProductInc}>+</button>
                         Product Output: {skills.product}
                         <div className="description">
-                            Cost: $1000<br />
                             You can never have enough product!
                         </div>
                     </div>
@@ -76,7 +72,6 @@ class Skillpoints extends React.Component {
                         <button className="inc" onClick={this.handleProfitInc}>+</button>
                         Profit Margin: {skills.profit}
                         <div className="description">
-                            Cost: $1000<br />
                             Increases how much money you make per product.
                         </div>
                     </div>

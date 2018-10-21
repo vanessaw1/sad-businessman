@@ -79,7 +79,6 @@ class App extends React.Component {
                             />
                             <Sidebar onClick={this.show} />
                             <div className="Content">
-                                <Route exact path="/" component={Welcome} />
                                 <Route path="/overview" render={(props) =>
                                     <Overview
                                         money={this.props.moChange}
@@ -106,6 +105,7 @@ class App extends React.Component {
                                     />} />
                                 <Route path="/inbox" component={Inbox} />
                                 <Route path="/login" component={Login} />
+                                <Route exact path="/" component={Welcome} />
                             </div>
                         </div>
                     </Router>

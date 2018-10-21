@@ -14,10 +14,13 @@
   <center id="map">
     <h1 id="contents">Hello</h1>
     <div style="
-    width: 1280px; 
-    height: 720px; 
-    margin-right: auto;
-    margin-left: auto;" id="mapContainer"></div>
+      position: absolute;
+      width: 90%; 
+      height: 90%; 
+      margin-left: 4%;
+      margin-top: 2%;
+      border: 1px solid lightgrey;
+      border-radius: 5px;" id="mapContainer"></div>
   </center>
   <script>
     function showHideSection(section) {
@@ -138,7 +141,7 @@
       document.getElementById('mapContainer'),
       maptypes.normal.map,
       {
-        zoom: 1.8,
+        zoom: 2.2,
         center: { lng: -74, lat: 40 }
       });
 

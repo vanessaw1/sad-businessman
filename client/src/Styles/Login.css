@@ -17,9 +17,16 @@ body {
   color: deeppink;
 }
 
-.LoginContent {
-  margin: 1rem, 1rem;
+.LoginContent.false {
+  display: none;
+  position: relative;
+  margin-top: 5rem;
+  margin-left: 7rem;
   font-size: 30px;
+}
+
+.LoginContent.true {
+  display: none;
 }
 
 .LoginContainer {

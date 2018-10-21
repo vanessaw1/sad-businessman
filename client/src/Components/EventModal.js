@@ -5,7 +5,7 @@ class EventModal extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            isHidden: true //this.props.eventsList.len > 0
+            isHidden: false //this.props.eventsList.len > 0
         };
         this.toggleHidden = this.toggleHidden.bind(this);
     };
@@ -17,11 +17,6 @@ class EventModal extends React.Component {
     };
 
     render() {
-        // const options = <button>Ok</button>
-        // const options = this.props.options.map(option => 
-        //     <button>{option}</button>
-        // );
-
         return (
             <div className={"EventModal " + this.state.isHidden}>
                 <div className="Details">
@@ -30,11 +25,11 @@ class EventModal extends React.Component {
                     </div>
                     <div className="Description">
                         {/* {this.props.eventsList[0][2]} */}
-                        Example description. Will you choose option 1 or option 2? Hmmmmmmmmmm
+                        This game is addictive. Are you sure you would like to proceed?
                     </div>
                     <div>
-                        <button className="Options" onClick={() => this.toggleHidden(true)}>Option 1</button>
-                        <button className="Options" onClick={() => this.toggleHidden(true)}>Option 2</button>
+                        <button className="Options" onClick={() => this.toggleHidden(true)}>Yes</button>
+                        <button className="Options" onClick={() => this.toggleHidden(true)}>Why not?</button>
                     </div>
                 </div>
             </div>
