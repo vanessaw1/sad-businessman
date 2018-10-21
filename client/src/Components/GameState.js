@@ -11,9 +11,9 @@ export default class GameState extends React.Component {
             factories: {africa:0, na:1, sa:0, asia:0, eu:0, pacific:0},
             skills: {bribe:1, pr:1, ads:1, product:1, profit:1},
             scores: {money:1000000, reputation:100, efficiency:1},
-            moChange: 0,
-            reChange: 0,
-            peChange: 0,
+            moChange: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+            reChange: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+            peChange: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
             isEvents: false,
             events: { money: -1, reputation: -1 },
             isFactoryChanged: false,
@@ -22,6 +22,7 @@ export default class GameState extends React.Component {
         }
         this.changeSkill = this.changeSkill.bind(this);
         this.changeFactory = this.changeFactory.bind(this);
+        this.addToStack = this.addToStack.bind(this);
     };
 
     componentDidMount() {
@@ -34,6 +35,12 @@ export default class GameState extends React.Component {
 
     componentWillUnmount() {
         clearInterval(this.timerID);
+    }
+
+    addToStack(value, stack, max) {
+        stack.unshift(value);
+        if (stack.length > max) stack.pop();
+        return stack;
     }
 
     changeFactory(c) {
@@ -106,10 +113,14 @@ export default class GameState extends React.Component {
         const sk = past.skills;
         var moChange = sc.reputation * (f.africa + f.na + f.sa + f.asia + f.eu + f.pacific) / 99;
         var reChange = sc.efficiency / (sk.pr + sk.ads + sk.product);
+        
+        const newMoChange = this.addToStack(moChange, this.state.moChange, 15);
+        const newReChange = this.addToStack(-reChange, this.state.reChange, 15);
         this.setState ({
-            moChange: moChange,
-            reChange: reChange
+            moChange: newMoChange,
+            reChange: newReChange
         });
+
         var newScore = {
             money: Math.round((sc.money + moChange)*100) / 100, 
             reputation: Math.round((sc.reputation - reChange)*100) / 100, 
@@ -139,8 +150,10 @@ export default class GameState extends React.Component {
             eu:p.eu+c[4], 
             pacific:p.pacific+c[5]
         }
+
+        const newPeChange = this.addToStack(c[0]+c[1]+c[2]+c[3]+c[4]+c[5], this.state.peChange, 15);
         this.setState ({
-            peChange: c[0]+c[1]+c[2]+c[3]+c[4]+c[5]
+            peChange: newPeChange
         });
         return newPercen
     }
@@ -225,7 +238,7 @@ export default class GameState extends React.Component {
                 factories = {factories}
                 skills = {skills}
                 moChange = {this.state.moChange}
-                reChange = {-this.state.reChange}
+                reChange = {this.state.reChange}
                 peChange = {this.state.peChange}
                 percentage = {percentage}
                 skillPointLeft = {skillPointLeft}
