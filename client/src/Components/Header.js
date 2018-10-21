@@ -34,7 +34,9 @@ class Header extends React.Component {
                     </input>
                 </span> */}
                 <div className="Login">
-                    {Login}
+                    <Link to="/login" style={{ textDecoration: 'none' }}>
+                        Log In
+                    </Link>
                 </div>
                 <div>
                     <Link to="">

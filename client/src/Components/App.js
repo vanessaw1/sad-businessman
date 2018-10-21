@@ -9,6 +9,7 @@ import WorldMap from './WorldMap.js';
 import Skillpoints from './Skillpoints.js';
 import Factories from './Factories.js';
 import Inbox from './Inbox.js';
+import Login from './Login';
 import '../Styles/App.css';
 import '../Styles/Sidebar.css';
 
@@ -45,8 +46,8 @@ class App extends React.Component {
             <div>
                 <Router>
                     <div>
-                        <EventModal eventsList={eventsList}/>
-                        <Header 
+                        <EventModal eventsList={eventsList} />
+                        <Header
                             money={this.props.scores.money}
                             factories={factorySum}
                             reputation={sc.reputation}
@@ -56,28 +57,29 @@ class App extends React.Component {
                         <div className="Content">
                             <Route exact path="/" component={Welcome} />
                             <Route path="/overview" render={(props) =>
-                                <Overview 
-                                    money={this.props.moChange} 
+                                <Overview
+                                    money={this.props.moChange}
                                     factories={factorySum}
-                                    reputation={this.props.reChange} 
-                                    destruction={this.props.peChange} 
-                                />} 
+                                    reputation={this.props.reChange}
+                                    destruction={this.props.peChange}
+                                />}
                             />
                             <Route path="/map" component={WorldMap} />
                             <Route path="/skillpoints" render={(props) =>
-                                <Skillpoints 
-                                    skills={skills} 
-                                    beep={this.props.beep} 
+                                <Skillpoints
+                                    skills={skills}
+                                    beep={this.props.beep}
                                     changeSkill={this.props.changeSkill}
                                     skillPointLeft={this.props.skillPointLeft}
                                 />
-                            }/>
-                            <Route path="/factories" render={(props) => 
+                            } />
+                            <Route path="/factories" render={(props) =>
                                 <Factories
                                     factories={f}
                                     changeFactory={this.props.changeFactory}
                                 />} />
                             <Route path="/inbox" component={Inbox} />
+                            <Route path="/login" component={Login} />
                         </div>
                     </div>
                 </Router>
