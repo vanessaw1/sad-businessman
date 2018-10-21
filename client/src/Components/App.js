@@ -57,10 +57,10 @@ class App extends React.Component {
                             <Route exact path="/" component={Welcome} />
                             <Route path="/overview" render={(props) =>
                                 <Overview 
-                                    money={sc.money} 
+                                    money={this.props.moChange} 
                                     factories={factorySum}
-                                    reputation={sc.reputation} 
-                                    destruction={destructionSum} 
+                                    reputation={this.props.reChange} 
+                                    destruction={this.props.peChange} 
                                 />} 
                             />
                             <Route path="/map" component={WorldMap} />

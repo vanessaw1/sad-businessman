@@ -31,7 +31,8 @@ class Skillpoints extends React.Component {
         const skills = this.props.skills;
         return (
             <div className="Intro">
-                These are your current upgrades. You can purchase more upgrades from here.
+                These are your current upgrades. You can allocate your points from here. 
+                Increasing and decreasing points costs money.
                 You have {this.props.skillPointLeft} points left.
                 <div className="Upgrades">
                     <div>
