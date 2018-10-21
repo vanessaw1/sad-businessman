@@ -37,27 +37,32 @@ class Skillpoints extends React.Component {
                     <div>
                         <button className="inc" onClick={this.handleBribeInc}>+</button>
                         <button className="dec" onClick={this.handleBribeDec}>-</button>
-                        Bribes:   {skills.bribe}
+                        Bribes: {skills.bribe}
+                        {"     Buy a bribe to government and NGO officials to put in good words for your company."}
                     </div>
                     <div>
                         <button className="inc" onClick={this.handlePRInc}>+</button>
                         <button className="dec" onClick={this.handlePRDec}>-</button>
                         PR (Public Relation): {skills.pr}
+                        {"    Imploy a communication strategy that builds beneficial relationships between your company and its publics."}
                     </div>
                     <div>
                         <button className="inc" onClick={this.handleAdsInc}>+</button>
                         <button className="dec" onClick={this.handleAdsDec}>-</button>
                         Advertisement Effectiveness: {skills.ads}
+                        {"    Make an effective advertisement to increase your company's influence and reputation."}
                     </div>
                     <div>
                         <button className="inc" onClick={this.handleProductInc}>+</button>
                         <button className="dec" onClick={this.handleProductDec}>-</button>
                         Product Output: {skills.product}
+                        {"    Increase your company's product quality to increase its reputation."}
                     </div>
                     <div>
                         <button className="inc" onClick={this.handleProfitInc}>+</button>
                         <button className="dec" onClick={this.handleProfitDec}>-</button>
                         Profit Margin: {skills.profit}
+                        {"    Get your profit margin close to optimal so that you make the most out of what you make."}
                     </div>
                 </div>
             </div>

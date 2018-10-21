@@ -17,7 +17,7 @@
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
     border-radius: 5px;
-    border: 1px solid deeppink;
+    border: 2px solid deeppink;
     color: wheat;
     font-weight: bolder;
 }
@@ -31,13 +31,14 @@
 }
 
 .Upgrades {
-    font-size: 30px;
+    font-size: 25px;
+    margin-left: 2rem;
     padding-bottom: 10px;
     color: yellow;
 }
 
 .Intro {
     margin: 1rem 1rem;
-    font-size: 30px;
+    font-size: 25px;
     color: wheat;
 }

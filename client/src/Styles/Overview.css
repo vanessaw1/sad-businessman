@@ -4,3 +4,20 @@
     font-size: 30px;
     color: wheat;
 }
+
+.AvgStats {
+    margin-top: 1rem;
+    width: 20%;
+    float: left;
+    text-align: center;
+    display: flex;
+    font-weight: bold;
+    color: yellow;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.head {
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
