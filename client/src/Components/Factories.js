@@ -25,9 +25,11 @@ class Factories extends React.Component {
         // Outer loop to create parent
         for (let i = 0; i < n; i++) {
             // dotlsts.push(<div class={"dot" + continent + i}>
-            dotlsts.push(<div class={"dot"}>
-                <span class="cityname">CityName</span>
-            </div>)
+            dotlsts.push(
+                <div class={"dot"}>
+                    <span class="cityname">CityName</span>
+                </div>
+            )
         }
         return dotlsts
     }
@@ -47,7 +49,7 @@ class Factories extends React.Component {
 
         return (
             <div className="FactoriesContent">
-                These are your factories. You can manage your factories from here.
+                These are your factories from all over the world. You can manage your factories here.
                 <table className="FactoriesTable">
                     <tr>
                         <th></th>
@@ -55,42 +57,42 @@ class Factories extends React.Component {
                         <th>Factories</th>
                     </tr>
                     <tr>
-                        <td><button onClick={this.handleAfrica}>Add</button></td>
+                        <td><button className="Add" onClick={this.handleAfrica}>Add</button></td>
                         <td>Africa</td>
                         <td>
                             {this.createDotLists(af_num, "AF")}
                         </td>
                     </tr>
                     <tr>
-                        <td><button onClick={this.handleNA}>Add</button></td>
+                        <td><button className="Add" onClick={this.handleNA}>Add</button></td>
                         <td>North America</td>
                         <td>
                             {this.createDotLists(na_num, "NA")}
                         </td>
                     </tr>
                     <tr>
-                        <td><button onClick={this.handleSA}>Add</button></td>
+                        <td><button className="Add" onClick={this.handleSA}>Add</button></td>
                         <td>South America</td>
                         <td>
                             {this.createDotLists(sa_num, "SA")}
                         </td>
                     </tr>
                     <tr>
-                        <td><button onClick={this.handleAsia}>Add</button></td>
+                        <td><button className="Add" onClick={this.handleAsia}>Add</button></td>
                         <td>Asia</td>
                         <td>
                             {this.createDotLists(as_num, "AS")}
                         </td>
                     </tr>
                     <tr>
-                        <td><button onClick={this.handleEurope}>Add</button></td>
+                        <td><button className="Add" onClick={this.handleEurope}>Add</button></td>
                         <td>Europe</td>
                         <td>
                             {this.createDotLists(eu_num, "EU")}
                         </td>
                     </tr>
                     <tr>
-                        <td><button onClick={this.handlePacific}>Add</button></td>
+                        <td><button className="Add" onClick={this.handlePacific}>Add</button></td>
                         <td>Pacific</td>
                         <td>
                             {this.createDotLists(pa_num, "PA")}

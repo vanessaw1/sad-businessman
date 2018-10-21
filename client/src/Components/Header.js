@@ -10,7 +10,7 @@ class Header extends React.Component {
             <div className="Header">
                 <table className="Stats">
                     <tr>
-                        <th>{this.props.money}</th>
+                        <th>${this.props.money}</th>
                         <th>{this.props.factories}</th>
                         <th>{this.props.reputation} / 100</th>
                         <th>{this.props.destruction} / 600</th>
