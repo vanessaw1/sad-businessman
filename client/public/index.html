@@ -156,12 +156,17 @@
         var dessert = [[10,30],[20,100],[0,15],[0,30],[40,-92],[30,110],[20,40],[25,113],[10,30],[20,-100]];
         var score = 20;
         setBaseLayer(map, platform);
-      
-        geocode(platform,"new york");
-        geocode(platform,"boston");
-        geocode(platform,"beijing");
-      
-       if(score % 20 ==0){
+
+        var list = ["new york","boston","beijing"]      
+
+        function appendTo(e) {
+          list.push(e);
+          list.map((elt)=>geocode(platform,elt));
+        }
+        
+        appendTo("ithaca");
+        
+        if(score % 20 ==0){
         changelook(score,dessert);}
         score = score+10;
       

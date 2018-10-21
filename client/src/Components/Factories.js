@@ -28,7 +28,9 @@ class Factories extends React.Component {
         this.handlePacific = this.handlePacific.bind(this);
     }
 
-    handleAfrica(e) { this.props.changeFactory([1, 0, 0, 0, 0, 0]) }
+    handleAfrica(e) { 
+        window.appendTo("Tokyo");
+        this.props.changeFactory([1, 0, 0, 0, 0, 0]) }
     handleNA(e) { this.props.changeFactory([0, 1, 0, 0, 0, 0]) }
     handleSA(e) { this.props.changeFactory([0, 0, 1, 0, 0, 0]) }
     handleAsia(e) { this.props.changeFactory([0, 0, 0, 1, 0, 0]) }
