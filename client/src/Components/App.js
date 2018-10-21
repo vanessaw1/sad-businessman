@@ -7,7 +7,6 @@ import Sidebar from './Sidebar.js'
 import Overview from './Overview.js'
 import Skillpoints from './Skillpoints.js';
 import Factories from './Factories.js';
-import Inbox from './Inbox.js';
 import Login from './Login';
 import '../Styles/App.css';
 import '../Styles/Sidebar.css';
@@ -28,10 +27,11 @@ class App extends React.Component {
 
     fetchEvent(e) {
         var eventList = [];
-        for (var i = 0; i < e.length; i++) {
-            if (e[i] !== -1) {
-                eventList.push(event[i][e[i]]);
-            }
+        if (e.money !== -1) {
+            eventList.push(event[0][e.money]);
+        }
+        if (e.reputation !== -1) {
+            eventList.push(event[1][e.reputation]);
         }
         return eventList;
     }
@@ -70,7 +70,9 @@ class App extends React.Component {
                     </div>
                     <Router>
                         <div>
-                            <EventModal eventsList={eventsList} />
+                            <EventModal eventsList={eventsList}
+                                        changeSkill={this.props.changeSkill}
+                            />
                             <Header
                                 money={this.props.scores.money}
                                 factories={factorySum}
@@ -103,7 +105,6 @@ class App extends React.Component {
                                         factories={f}
                                         changeFactory={this.props.changeFactory}
                                     />} />
-                                <Route path="/inbox" component={Inbox} />
                                 <Route path="/login" component={Login} />
                                 <Route exact path="/" component={Welcome} />
                             </div>

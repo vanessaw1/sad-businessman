@@ -26,11 +26,6 @@ class Sidebar extends React.Component {
                         Factories
                     </button>
                 </Link>
-                <Link to="/inbox" style={{ textDecoration: 'none' }}>
-                    <button className="Inbox nav">
-                        Inbox
-                    </button>
-                </Link>
             </div>
         );
     }
