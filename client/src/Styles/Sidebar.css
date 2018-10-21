@@ -18,7 +18,7 @@
   border-radius: 10px;
   background-color:transparent;
   border: 3px solid deeppink;
-  color: white;
+  color: wheat;
   padding: 20px 30px;
   text-align: center;
   display: inline-block;
@@ -31,7 +31,7 @@
   display: block;
 }
   
-button:hover {
+.nav:hover {
   background-color: deeppink;
   color:white;
 }

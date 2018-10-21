@@ -3,13 +3,10 @@
   src:url("../Resources/Dosis-Light.ttf")
 }
 
-body {
-  color: rgb(216, 38, 151);
-  font-family: 'doris';
-}
-
 .MapContent {
   margin-left: 1rem;
   margin-top: 1rem;
   font-size: 30px;
+  color: wheat;
+  font-family: 'doris';
 }
