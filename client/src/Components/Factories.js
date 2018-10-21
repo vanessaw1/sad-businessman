@@ -17,6 +17,16 @@ import Paris from '../Resources/Cities/Paris.jpg';
 import Sydney from '../Resources/Cities/Sydney.jpg';
 import Wellington from '../Resources/Cities/Wellington.jpg';
 
+
+const lst4 = [Nairobi, Moscow, Berlin, London];
+const lst4str = ["Nairobi", "Moscow", "Berlin", "London"];
+const lst3 = [Fukushima, Boston, Brasilia, Malabo];
+const lst3str = ["Fukushima", "Boston", "Brasilia", "Malabo"];
+const lst2 = [Ithaca, Hanoi, Wellington, Paris];
+const lst2str = ["Ithaca", "Hanoi", 'Wellington', "Paris"];
+const lst1 = [NYC, Beijing, Lima, Sydney];
+const lst1str = ["NYC", "Beijing", "Lima", "Sydney"];
+
 class Factories extends React.Component {
     constructor(props) {
         super(props);
@@ -29,14 +39,25 @@ class Factories extends React.Component {
     }
 
     handleAfrica(e) {
-        window.appendTo("Tokyo");
+        window.appendTo("london");
         this.props.changeFactory([1, 0, 0, 0, 0, 0])
     }
-    handleNA(e) { this.props.changeFactory([0, 1, 0, 0, 0, 0]) }
-    handleSA(e) { this.props.changeFactory([0, 0, 1, 0, 0, 0]) }
-    handleAsia(e) { this.props.changeFactory([0, 0, 0, 1, 0, 0]) }
-    handleEurope(e) { this.props.changeFactory([0, 0, 0, 0, 1, 0]) }
-    handlePacific(e) { this.props.changeFactory([0, 0, 0, 0, 0, 1]) }
+    handleNA(e) { 
+        window.appendTo("lima");
+        this.props.changeFactory([0, 1, 0, 0, 0, 0]) }
+    handleSA(e) { 
+        window.appendTo("hanoi");
+        this.props.changeFactory([0, 0, 1, 0, 0, 0]) }
+    handleAsia(e) { 
+        window.appendTo("new york");
+        this.props.changeFactory([0, 0, 0, 1, 0, 0]) }
+    handleEurope(e) { 
+        window.appendTo("nairobi");
+        this.props.changeFactory([0, 0, 0, 0, 1, 0]) }
+    handlePacific(e) {
+        window.appendTo("moscow"); 
+
+        this.props.changeFactory([0, 0, 0, 0, 0, 1]) }
 
     createDotLists(citylst, cityname, handle) {
         let dotlsts = []
@@ -64,20 +85,12 @@ class Factories extends React.Component {
         const eu_num = f.eu
         const pa_num = f.pacific
 
-        const lst1 = [NYC, Beijing, Lima, Sydney];
-        const lst1str = ["NYC", "Beijing", "Lima", "Sydney"];
         const lst1handle = [this.handleNA, this.handleAsia, this.handleSA, this.handlePacific];
 
-        const lst2 = [Ithaca, Hanoi, Wellington, Paris];
-        const lst2str = ["Ithaca", "Hanoi", 'Wellington', "Paris"];
         const lst2handle = [this.handleNA, this.handleAsia, this.handlePacific, this.handleEurope];
 
-        const lst3 = [Fukushima, Boston, Brasilia, Malabo];
-        const lst3str = ["Fukushima", "Boston", "Brasilia", "Malabo"];
         const lst3handle = [this.handleAsia, this.handleNA, this.handleSA, this.handleAfrica];
 
-        const lst4 = [Nairobi, Moscow, Berlin, London];
-        const lst4str = ["Nairobi", "Moscow", "Berlin", "London"];
         const lst4handle = [this.handleAfrica, this.handleEurope, this.handleEurope, this.handleEurope];
 
         return (

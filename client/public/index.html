@@ -133,11 +133,12 @@
     function onError(error) {
       alert('Ooops!');
     }
+    var dessert = [[10, 30], [20, 100], [0, 15], [0, 30], [40, -92], [30, 110], [20, 40], [25, 113], [10, 30], [20, -100]];
 
-    function changelook(score, listd) {
+    function changelook(score) {
       var k = score / 10 - 1;
-      adddesert(listd, k * 2);
-      adddesert(listd, k * 2 + 1);
+      adddesert(dessert, k * 2);
+      adddesert(dessert, k * 2 + 1);
       decreaseice();
     }
     // Initialize the platform object:
@@ -159,7 +160,6 @@
       });
     var k = 0;
     var ui = H.ui.UI.createDefault(map, defaultLayers);
-    var dessert = [[10, 30], [20, 100], [0, 15], [0, 30], [40, -92], [30, 110], [20, 40], [25, 113], [10, 30], [20, -100]];
     var score = 20;
     setBaseLayer(map, platform);
 

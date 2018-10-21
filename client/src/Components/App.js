@@ -63,11 +63,12 @@ class App extends React.Component {
         const pc = this.props.percentage;
         const f = this.props.factories;
         const e = this.props.events;
-
         const destructionSum = this.sum(pc);
+        const what = Math.ceil(destructionSum / 1200) * 10;
         const factorySum = this.sum(f);
         const skills = this.props.skills;
         const eventsList = this.fetchEvent(e);
+        window.changelook(what);
         const styles = { display: this.state.isShow }
 
         return (
