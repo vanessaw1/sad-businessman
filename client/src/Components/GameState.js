@@ -17,9 +17,7 @@ export default class GameState extends React.Component {
             moHistory: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
             reHistory: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
             peHistory: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            isEvents: false,
             events: { money: -1, reputation: -1 },
-            isFactoryChanged: false,
             factoryChange: [0, 0, 0, 0, 0],
             skillPointLeft: 35
         }
@@ -175,18 +173,18 @@ export default class GameState extends React.Component {
     }
 
     spawn(source) {
-        if ((source > 200 && Math.random() > 0.97) || this.check > 25) {
-            const e = Math.round(numEvent / 3 * Math.random());
+        if ((source > 200 && Math.random() > 0.97) || this.check > 15) {
+            const e = Math.floor(numEvent / 3 * Math.random());
             this.check = 0;
             return e;
         }
-        else if ((source < 200 && source > 50 && Math.random() > 0.98) || this.check > 30) {
-            const e = Math.round(numEvent / 3 * Math.random());
+        else if ((source < 200 && source > 50 && Math.random() > 0) || this.check > 10) {
+            const e = Math.floor(numEvent / 3 * Math.random());
             this.check = 0;
             return e + numEvent / 3;
         }
-        else if ((source < 50 && Math.random() > 0.97) || this.check > 20) {
-            const e = Math.round(numEvent / 3 * Math.random());
+        else if ((source < 50 && Math.random() > 0.97) || this.check > 10) {
+            const e = Math.floor(numEvent / 3 * Math.random());
             this.check = 0;
             return e + numEvent / 3 * 2
         }

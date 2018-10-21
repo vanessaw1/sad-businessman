@@ -10,29 +10,51 @@ class EventModal extends React.Component {
         this.toggleHidden = this.toggleHidden.bind(this);
     };
 
-    toggleHidden(toggle) {
+    toggleHidden(toggle, r) {
+        this.props.changeSkill(r.skills);
+        alert("skill changed! " + r.skills);
         this.setState({
             isHidden: toggle
         });
     };
 
+    option(l,r) {
+        var list = []
+
+        for (var i = 0; i< l.length; i ++) {
+            const some = r[i]
+            list.push(
+                <button className="Options" onClick={() => this.toggleHidden(true,some)}>{l[i]}</button>
+            );
+        }
+        return list;
+    }
+
     render() {
+        const eventsList = this.props.eventsList;
         return (
-            <div className={"EventModal " + this.state.isHidden}>
-                <div className="Details">
-                    <div className="Caption">
-                        Random Event!
+            <div>
+                    {(eventsList.length > 0) && 
+                    eventsList.map( (elt) =>
+                        <div className={"EventModal " + this.state.isHidden}>
+                        <div className="Details">
+                        <div>
+                        <div className="Caption">
+                        {elt.title}
+                        </div>
+                        <div className="Description">
+                        {elt.content}
+                        </div>
+                            {
+                            this.option(elt.choice,elt.response).map( (e) => e
+                            )
+                            }
+                        </div>
+                        </div>
+                        </div>
+                    )
+                    }
                     </div>
-                    <div className="Description">
-                        {/* {this.props.eventsList[0][2]} */}
-                        This game is addictive. Are you sure you would like to proceed?
-                    </div>
-                    <div>
-                        <button className="Options" onClick={() => this.toggleHidden(true)}>Yes</button>
-                        <button className="Options" onClick={() => this.toggleHidden(true)}>Why not?</button>
-                    </div>
-                </div>
-            </div>
         );
     }
 }

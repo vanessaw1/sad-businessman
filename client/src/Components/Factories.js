@@ -1,6 +1,6 @@
 import React from 'react';
 import '../Styles/Factories.css';
-import Beijing from "../Resources/Cities/Beijing.jpg";
+import Beijing from "../Resources/Cities/beijing.jpg";
 import Berlin from "../Resources/Cities/Berlin.jpg";
 import Boston from '../Resources/Cities/Boston.jpg';
 import Brasilia from '../Resources/Cities/Brasilia.jpg';
