@@ -60,7 +60,10 @@ class App extends React.Component {
                                     money={this.props.moChange} 
                                     factories={factorySum}
                                     reputation={this.props.reChange} 
-                                    destruction={this.props.peChange} 
+                                    destruction={this.props.peChange}
+                                    moHistory={this.props.moHistory} 
+                                    reHistory={this.props.reHistory} 
+                                    deHistory={this.props.peHistory} 
                                 />} 
                             />
                             <Route path="/map" component={WorldMap} />

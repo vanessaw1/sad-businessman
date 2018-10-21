@@ -5,16 +5,16 @@
     color: wheat;
 }
 
-.AvgStats {
-    margin-top: 1rem;
-    width: 20%;
-    float: left;
-    text-align: center;
-    display: flex;
-    font-weight: bold;
+.Money {
     color: yellow;
-    justify-content: center;
-    flex-direction: column;
+}
+
+.Reputation {
+    color: deeppink;
+}
+
+.Destruction {
+    color: white;
 }
 
 .head {
