@@ -89,6 +89,7 @@
             //'rgba(180,160,120,0.7)'  // Color of the circle
           }
         }
+<<<<<<< HEAD
       ));
       return k = k + 1;
     }
@@ -129,6 +130,7 @@
     function onError(error) {
       alert('Ooops!');
     }
+
     function changelook(score, listd) {
       var k = score / 10 - 1;
       adddesert(listd, k * 2);
@@ -149,7 +151,7 @@
       document.getElementById('mapContainer'),
       maptypes.normal.map,
       {
-        zoom: 2.2,
+        zoom: 1.2,
         center: { lng: -74, lat: 40 }
       });
     var k = 0;
@@ -158,9 +160,14 @@
     var score = 20;
     setBaseLayer(map, platform);
 
-    geocode(platform, "new york");
-    geocode(platform, "boston");
-    geocode(platform, "beijing");
+    var list = ["new york", "boston", "beijing"]
+
+    function appendTo(e) {
+      list.push(e);
+      list.map((elt) => geocode(platform, elt));
+    }
+
+    appendTo("ithaca");
 
     if (score % 20 == 0) {
       changelook(score, dessert);
@@ -171,3 +178,4 @@
 </body>
 
 </html>
+>>>>>>> 4f593cd6ba4fc939bf04de96cc4ff823ec9f8138

@@ -5,7 +5,6 @@ import EventModal from './EventModal'
 import Header from './Header.js'
 import Sidebar from './Sidebar.js'
 import Overview from './Overview.js'
-import WorldMap from './WorldMap.js';
 import Skillpoints from './Skillpoints.js';
 import Factories from './Factories.js';
 import Inbox from './Inbox.js';

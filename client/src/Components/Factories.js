@@ -28,7 +28,9 @@ class Factories extends React.Component {
         this.handlePacific = this.handlePacific.bind(this);
     }
 
-    handleAfrica(e) { this.props.changeFactory([1, 0, 0, 0, 0, 0]) }
+    handleAfrica(e) { 
+        window.appendTo("Tokyo");
+        this.props.changeFactory([1, 0, 0, 0, 0, 0]) }
     handleNA(e) { this.props.changeFactory([0, 1, 0, 0, 0, 0]) }
     handleSA(e) { this.props.changeFactory([0, 0, 1, 0, 0, 0]) }
     handleAsia(e) { this.props.changeFactory([0, 0, 0, 1, 0, 0]) }
@@ -101,55 +103,6 @@ class Factories extends React.Component {
                     </div>
                 </div>
 
-                {/* <table className="FactoriesTable">
-                    <tr>
-                        <th></th>
-                        <th>Continents</th>
-                        <th>Factories</th>
-                    </tr>
-                    <tr>
-                        <td><button className="Add" onClick={this.handleAfrica}>Add</button></td>
-                        <td>Africa</td>
-                        <td>
-                            {this.createDotLists(af_num, "AF")}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><button className="Add" onClick={this.handleNA}>Add</button></td>
-                        <td>North America</td>
-                        <td>
-                            {this.createDotLists(na_num, "NA")}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><button className="Add" onClick={this.handleSA}>Add</button></td>
-                        <td>South America</td>
-                        <td>
-                            {this.createDotLists(sa_num, "SA")}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><button className="Add" onClick={this.handleAsia}>Add</button></td>
-                        <td>Asia</td>
-                        <td>
-                            {this.createDotLists(as_num, "AS")}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><button className="Add" onClick={this.handleEurope}>Add</button></td>
-                        <td>Europe</td>
-                        <td>
-                            {this.createDotLists(eu_num, "EU")}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><button className="Add" onClick={this.handlePacific}>Add</button></td>
-                        <td>Pacific</td>
-                        <td>
-                            {this.createDotLists(pa_num, "PA")}
-                        </td>
-                    </tr>
-                </table> */}
             </div>
         );
     }
