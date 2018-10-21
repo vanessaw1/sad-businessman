@@ -14,5 +14,4 @@ We plan to finish the features we did not have time to finish, such as message b
 ### screenshot:
 ![alt text](/imgs/1.jpg)
 ![alt text](/imgs/2.jpg)
-![alt text](/imgs/3.jpg)
 ![alt text](/imgs/4.jpg)
