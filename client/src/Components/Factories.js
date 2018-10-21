@@ -19,15 +19,14 @@ class Factories extends React.Component {
     handleEurope(e) { this.props.changeFactory([0, 0, 0, 0, 1, 0]) }
     handlePacific(e) { this.props.changeFactory([0, 0, 0, 0, 0, 1]) }
 
-    createDotLists(n, continent) {
+    createDotLists(citylst) {
         let dotlsts = []
 
         // Outer loop to create parent
-        for (let i = 0; i < n; i++) {
-            // dotlsts.push(<div class={"dot" + continent + i}>
+        for (let i = 0; i < 4; i++) {
             dotlsts.push(
-                <div class={"dot"}>
-                    <span class="cityname">CityName</span>
+                <div className={citylst[i] + i + " dot"}>
+                    <span className="cityname"> {citylst[i]}</span>
                 </div>
             )
         }
@@ -50,7 +49,23 @@ class Factories extends React.Component {
         return (
             <div className="FactoriesContent">
                 These are your factories from all over the world. You can manage your factories here.
-                <table className="FactoriesTable">
+
+            <div className="CitiesList">
+                    <div>
+                        {this.createDotLists(["New York", "Beijing", "Lima", "Sydney"])}
+                    </div>
+                    <div>
+                        {this.createDotLists(["Ithaca", "Hanoi", "Wellington", "Paris"])}
+                    </div>
+                    <div>
+                        {this.createDotLists(["Fukushima", "Boston", "Brasília", "Malabo"])}
+                    </div>
+                    <div>
+                        {this.createDotLists(["Nairobi", "Moscow", "Berlin", "London"])}
+                    </div>
+                </div>
+
+                {/* <table className="FactoriesTable">
                     <tr>
                         <th></th>
                         <th>Continents</th>
@@ -98,7 +113,7 @@ class Factories extends React.Component {
                             {this.createDotLists(pa_num, "PA")}
                         </td>
                     </tr>
-                </table>
+                </table> */}
             </div>
         );
     }
