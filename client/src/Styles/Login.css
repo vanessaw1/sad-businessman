@@ -21,3 +21,35 @@ body {
   margin: 1rem, 1rem;
   font-size: 30px;
 }
+
+.LoginContainer {
+  background-color: white;
+  margin: 0%; /* 15% from the top and centered */
+  padding: 20px;
+  border: 5px solid wheat;
+  border-radius: 5px;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid grey;
+  box-sizing: border-box;
+}
+
+.LoginB {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.LoginB:hover {
+  opacity: 0.8;
+}

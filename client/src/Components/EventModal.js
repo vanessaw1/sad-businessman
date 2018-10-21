@@ -5,7 +5,7 @@ class EventModal extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            isHidden: false //this.props.eventsList.len > 0
+            isHidden: true //this.props.eventsList.len > 0
         };
         this.toggleHidden = this.toggleHidden.bind(this);
     };
