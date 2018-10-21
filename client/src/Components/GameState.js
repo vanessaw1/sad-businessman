@@ -178,7 +178,7 @@ export default class GameState extends React.Component {
     endGame() {
         const sc = this.state.scores;
         const pc = this.state.percentage;
-        if (sc.money === 0 && sc.reputation === 0) {
+        if (sc.money === 0 || sc.reputation === 0) {
             clearInterval(this.timerID);
             return "bankrupt";
         }
