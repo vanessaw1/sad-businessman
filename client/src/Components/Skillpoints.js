@@ -35,29 +35,49 @@ class Skillpoints extends React.Component {
                 You have {this.props.skillPointLeft} points left.
                 <div className="Upgrades">
                     <div>
-                        <button className="inc" onClick={this.handleBribeInc}>+</button>
                         <button className="dec" onClick={this.handleBribeDec}>-</button>
+                        <button className="inc" onClick={this.handleBribeInc}>+</button>
                         Bribes:   {skills.bribe}
+                        <div className="description">
+                            Cost: $1000<br />
+                            Bribe the African government! Helps increase destruction/day by 0.5
+                        </div>
                     </div>
                     <div>
-                        <button className="inc" onClick={this.handlePRInc}>+</button>
                         <button className="dec" onClick={this.handlePRDec}>-</button>
+                        <button className="inc" onClick={this.handlePRInc}>+</button>
                         PR (Public Relation): {skills.pr}
+                        <div className="description">
+                            Cost: $1000<br />
+                            Don't forget to maintain a good image! Helps increase destruction/day by 0.05
+                        </div>
                     </div>
                     <div>
-                        <button className="inc" onClick={this.handleAdsInc}>+</button>
                         <button className="dec" onClick={this.handleAdsDec}>-</button>
+                        <button className="inc" onClick={this.handleAdsInc}>+</button>
                         Advertisement Effectiveness: {skills.ads}
+                        <div className="description">
+                            Cost: $1000<br />
+                            More advertising means more consumers! Helps increase destruction/day by 0.05
+                        </div>
                     </div>
                     <div>
-                        <button className="inc" onClick={this.handleProductInc}>+</button>
                         <button className="dec" onClick={this.handleProductDec}>-</button>
+                        <button className="inc" onClick={this.handleProductInc}>+</button>
                         Product Output: {skills.product}
+                        <div className="description">
+                            Cost: $1000<br />
+                            You can never have enough product! Helps increase destruction/day by 0.05
+                        </div>
                     </div>
                     <div>
-                        <button className="inc" onClick={this.handleProfitInc}>+</button>
                         <button className="dec" onClick={this.handleProfitDec}>-</button>
+                        <button className="inc" onClick={this.handleProfitInc}>+</button>
                         Profit Margin: {skills.profit}
+                        <div className="description">
+                            Cost: $1000<br />
+                            Increases how much money you make per product. Helps increase destruction/day by 0.05
+                        </div>
                     </div>
                 </div>
             </div>
