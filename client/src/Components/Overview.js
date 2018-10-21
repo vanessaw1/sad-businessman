@@ -90,11 +90,11 @@ class Overview extends React.Component {
                 </div>
                 <table className="AvgStats">
                     <tr className="head">Money/day</tr>
-                    <tr>{this.props.money}</tr>
+                    <tr>${Math.round(this.props.money * 10000) / 10000}</tr>
                     <tr className="head">Reputation/day</tr>
-                    <tr>{this.props.reputation}</tr>
+                    <tr>{Math.round(this.props.reputation * 10000) / 10000}</tr>
                     <tr className="head">Destruction/day</tr>
-                    <tr>{this.props.destruction}</tr>
+                    <tr>{Math.round(this.props.destruction * 10000) / 10000}</tr>
                 </table>
                 <div className="line" >
                     <LineChart data={chartData} options={chartOptions}
