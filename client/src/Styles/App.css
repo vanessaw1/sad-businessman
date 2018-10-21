@@ -1,8 +1,9 @@
 body {
-  background-color:rgb(39, 17, 48);
+  background-color:#0C0B37;
   background-image: url("../Resources/Neon-city.jpg");
   background-position: bottom;
   background-position-y: 100px;
+  background-repeat: no-repeat;
   background-size: 100%, 100%;
 }
 
