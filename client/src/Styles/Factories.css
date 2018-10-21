@@ -12,17 +12,27 @@
   font-family: 'doris';
   margin: 1rem 1rem;
   font-size: 30px;
-  color: white;
+  color: wheat;
 }
 
-button {
+.handle {
   margin-left: 1rem;
   margin-right: 1rem;
   font-size: 15px;
-  font-weight: bold;
+  font-weight: bolder;
   font-family: 'neuron';
-  color: deeppink;
+  color: wheat;
   background-color: transparent;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  border-radius: 5px;
+  border: 1px solid deeppink;
+
+}
+
+.handle:hover {
+  background-color: deeppink;
 }
 
 .FactoriesTable td:nth-child(2) {

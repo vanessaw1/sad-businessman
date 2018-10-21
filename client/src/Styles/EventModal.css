@@ -7,6 +7,7 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    font-size: 30px;
 }
 
 .EventModal.true {
@@ -14,9 +15,32 @@
 }
 
 .Details {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    background-color: white;
+    margin: 20% auto; /* 15% from the top and centered */
     padding: 20px;
-    border: 1px solid #888;
+    border: 5px solid wheat;
+    border-radius: 5px;
     width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.Options {
+  margin-left: 15rem;
+  margin-right: 1rem;
+  margin-top: 2rem;
+  font-size: 23px;
+  font-weight: bolder;
+  font-family: 'neuron';
+  color: black;
+  background-color: transparent;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  border-radius: 5px;
+  border: 2px solid wheat;
+  display: inline;
+}
+
+.Options:hover {
+    background-color: deeppink;
+    border: 2px solid deeppink;
 }

@@ -1,20 +1,36 @@
-.inc .dec {
+@font-face {
+    font-family: 'neuron';
+    src:url("../Resources/Neuron.otf")
+  }
+  
+.inc, .dec {
     text-align: center;
     color: rgb(122, 45, 86);
-    margin: 10px 0px;
+    background-color: transparent;
+    font-family: 'neuron';
+    margin-left: 2rem;
+    margin-top: 2rem;
     cursor: pointer;
-    width: 100%;
-    display: block;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 25px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    border-radius: 5px;
+    border: 1px solid deeppink;
+    color: wheat;
+    font-weight: bolder;
 }
 
-.inc:hover {
-    cursor: pointer;
+.dec {
+    margin-right: 2rem;
+}
+
+.inc:hover, .dec:hover {
+    background-color: deeppink;
 }
 
 .Upgrades {
-    margin: 10px, 10px;
     font-size: 30px;
     padding-bottom: 10px;
     color: yellow;
@@ -23,5 +39,5 @@
 .Intro {
     margin: 1rem 1rem;
     font-size: 30px;
-    color: white;
+    color: wheat;
 }

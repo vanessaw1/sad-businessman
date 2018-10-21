@@ -32,9 +32,9 @@ class EventModal extends React.Component {
                         {/* {this.props.eventsList[0][2]} */}
                         Example description. Will you choose option 1 or option 2? Hmmmmmmmmmm
                     </div>
-                    <div className="Options">
-                        <button onClick={() => this.toggleHidden(true)}>Option 1</button>
-                        <button onClick={() => this.toggleHidden(true)}>Option 2</button>
+                    <div>
+                        <button className="Options" onClick={() => this.toggleHidden(true)}>Option 1</button>
+                        <button className="Options" onClick={() => this.toggleHidden(true)}>Option 2</button>
                     </div>
                 </div>
             </div>
