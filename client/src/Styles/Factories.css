@@ -15,7 +15,7 @@
   color: wheat;
 }
 
-.handle {
+.Add {
   margin-left: 1rem;
   margin-right: 1rem;
   font-size: 15px;
@@ -31,7 +31,7 @@
 
 }
 
-.handle:hover {
+.Add:hover {
   background-color: deeppink;
 }
 
@@ -42,7 +42,7 @@
 }
 
 .FactoriesTable {
-  table-layout: auto;
+  /* table-layout: auto; */
   margin-top: 2rem;
   margin-bottom: 2rem;
   border-collapse: collapse;
@@ -50,7 +50,6 @@
   height: 100%;
   font-size: 25px;
   text-align: left;
-  /* border: 1px solid grey; */
 }
 
 .FactoriesTable th {
@@ -79,19 +78,7 @@
   position: relative;
 }
 
-.dot {
-  height: 25px;
-  width: 25px;
-  margin-top: 10px;
-  margin-right: 10px;
-  background-color: rgb(218, 218, 5);
-  opacity: 50%;
-  border-radius: 50%;
-  display: inline-block;
-  position: relative;
-}
-
-.dot .cityname {
+ .cityname {
   visibility: hidden;
   width: 120px;
   color: yellow;

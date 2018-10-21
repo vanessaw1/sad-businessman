@@ -1,8 +1,8 @@
 @font-face {
     font-family: 'neuron';
     src:url("../Resources/Neuron.otf")
-  }
-  
+}
+
 .inc, .dec {
     text-align: center;
     color: rgb(122, 45, 86);
