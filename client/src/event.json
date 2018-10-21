@@ -7,36 +7,70 @@
             "choice": ["Sounds good!"],
             "response": [{
                 "skills": [0,0,0,0,1],
-                "scores": [0,0,10]
+                "scores": [100,0,1]
+                }]
+        },
+        {
+            "title": "Time to go abroad",
+            "content": "Multiple countries are seeking for foreign investment due to the economic warming",
+            "choice": ["Meh.","Let's go abroad!"],
+            "response": [{
+                "skills": [0,0,0,0,0],
+                "scores": [100,0,0]
+                },{
+                "skills": [0,0,0,0,1],
+                "scores": [-200,10,1]
+                }]
+        },
+        {
+            "title": "Running out of raw materials.",
+            "content": "It seems cotton is not harvesting well this year...",
+            "choice": ["Well. I believe the Earth is large enough to find some more.","Recycle is good!","Wait, what cotton?"],
+            "response": [{
+                "skills": [0,0,0,0,0],
+                "scores": [-100,5,0]
+                },{
+                "skills": [0,0,0,0,1],
+                "scores": [1000,10,-1]
+                },{
+                "skills": [0,0,0,0,0],
+                "scores": [0,-10,0]
                 }]
         }
     ], 
 
     [
         {
+            "title": "Brainwash has been successful.",
+            "content": "After long and hard work, now the public believe very much so that you are a green company.",
+            "choice": ["Fine, I don't care. Take me the balance report for this month right now. It should be on my desk an hour ago! "],
+            "response": [{
+                "skills": [0,0,0,0,0],
+                "scores": [0,0,0]
+                }]
+        },
+        {
             "title": "Global Clean Act",
             "content": "UN is about to enact a Clean Act.",
             "choice": ["Ok.","'Network' it down!"],
             "response": [{
                 "skills": [0,-1,0,0,0],
-                "scores": [-100,0,-100]
+                "scores": [-100,0,-1]
                 },{
                 "skills": [0,0,0,0,0],
                 "scores": [-1000,100,0]
                 }]
-        }
-    ],
-    [
+        },
         {
-            "title": "Time to go abroad",
-            "content": "Multiple countries are seeking for foreign investment due to the economic warming",
-            "choice": ["Meh.","Let's go abroad!"],
+            "title": "Protest!",
+            "content": "Animal protection organizations are gathering around your headquaters. They've been complaining the abuse of animal products for monthes.",
+            "choice": ["Whatever.","You know what...Get rid of their leaders."],
             "response": [{
-                "skills": [0,0,0,0,-1],
-                "scores": [0,0,0]
+                "skills": [0,-1,0,0,0],
+                "scores": [0,-20,0]
                 },{
-                "skills": [0,0,0,0,1],
-                "scores": [-100,10,100]
+                "skills": [0,0,0,0,0],
+                "scores": [-1000,-1,0]
                 }]
         }
     ]
