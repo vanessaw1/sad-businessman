@@ -28,30 +28,43 @@ class Factories extends React.Component {
         return (
             <div className="FactoriesContent">
                 These are your factories. You can manage your factories from here.
-                <div>
-                    Africa
-                    <button onClick={this.handleAfrica}>Add Factory</button>
-                </div>
-                <div>
-                    North America
-                    <button onClick={this.handleNA}>Add Factory</button>
-                </div>
-                <div>
-                    South America
-                    <button onClick={this.handleSA}>Add Factory</button>
-                </div>
-                <div>
-                    Asia
-                    <button onClick={this.handleAsia}>Add Factory</button>
-                </div>
-                <div>
-                    Europe
-                    <button onClick={this.handleEurope}>Add Factory</button>
-                </div>
-                <div>
-                    Pacific
-                    <button onClick={this.handlePacific}>Add Factory</button>
-                </div>
+                <table>
+                    <tr>
+                        <th>Add New Factory</th>
+                        <th>Continents</th>
+                        <th>Factories</th>
+                    </tr>
+                    <tr>
+                        <th><button onClick={this.handleAfrica}>Add Factory</button></th>
+                        <th>Africa</th>
+                        <th>Nairobi, Malabo, dasfasdf, adsfasdf, asdfs</th>
+                    </tr>
+                    <tr>
+                        <th><button onClick={this.handleNA}>Add Factory</button></th>
+                        <th>North America</th>
+                        <th>asdf</th>
+                    </tr>
+                    <tr>
+                        <th><button onClick={this.handleSA}>Add Factory</button></th>
+                        <th>South America</th>
+                        <th>asdf</th>
+                    </tr>
+                    <tr>
+                        <th><button onClick={this.handleAsia}>Add Factory</button></th>
+                        <th>Asia</th>
+                        <th>asdfasdf</th>
+                    </tr>
+                    <tr>
+                        <th><button onClick={this.handleEurope}>Add Factory</button></th>
+                        <th>Europe</th>
+                        <th>asdfasdf</th>
+                    </tr>
+                    <tr>
+                        <th><button onClick={this.handlePacific}>Add Factory</button></th>
+                        <th>Pacific</th>
+                        <th>asdfasdf</th>
+                    </tr>
+                </table>
             </div>
         );
     }
