@@ -13,10 +13,6 @@ import '../Styles/Sidebar.css';
 
 import event from '../event.json';
 
-// const moneEvent = event[0];
-// const repuEvent = event[1];
-// const effiEvent = event[2];
-
 class App extends React.Component {
     sum(f) {
         const v = Math.round((f.asia + f.na + f.sa + f.pacific + f.africa + f.eu) * 100) / 100;

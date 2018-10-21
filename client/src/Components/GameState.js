@@ -1,7 +1,7 @@
 import React from 'react';
 import App from './App.js'
 
-const numEvent = 1
+const numEvent = 3
 
 export default class GameState extends React.Component {
     constructor(props) {
@@ -12,12 +12,11 @@ export default class GameState extends React.Component {
             skills: {bribe:1, pr:1, ads:1, product:1, profit:1},
             scores: {money:1000000, reputation:100, efficiency:1},
             isEvents: false,
-            events: { money: -1, reputation: -1, efficiency: -1 },
+            events: { money: -1, reputation: -1 },
             isFactoryChanged: false,
             factoryChange: [0, 0, 0, 0, 0],
             skillPointLeft: 35
         }
-        this.endGame = this.endGame.bind(this);
         this.changeSkill = this.changeSkill.bind(this);
         this.changeFactory = this.changeFactory.bind(this);
     };
@@ -27,6 +26,7 @@ export default class GameState extends React.Component {
             () => this.tick(),
             1000
         );
+        this.check = 0;
     }
 
     componentWillUnmount() {
@@ -76,7 +76,7 @@ export default class GameState extends React.Component {
         const temp_ = [bribe, pr, ads, product, profit]
         const temp = temp_.filter(skill => skill < 0 || skill > 20)
         const point = c.reduce((a, b) => a + b, 0);
-        if ((l > 0 && temp.length === 0 || l === 0 &&  temp.length !== 0)
+        if (((l > 0 && temp.length === 0) || (l === 0 &&  temp.length !== 0))
          && sc.money > 100)
             {
             this.setState({
@@ -136,23 +136,34 @@ export default class GameState extends React.Component {
     }
 
     spawn(source) {
-        if (source * Math.random() > 500) { 
-            const money = Math.round(numEvent * Math.random());
-            return money
+        if ((source > 200 && Math.random() > 0.97) || this.check > 25) { 
+            const e = Math.round(numEvent / 3 * Math.random());
+            this.check = 0;
+            return e;
         }
+        else if ((source < 200 && source > 50 && Math.random() > 0.98) || this.check > 30) {
+            const e = Math.round(numEvent / 3 * Math.random());
+            this.check = 0;
+            return e + numEvent / 3;
+        }
+        else if ((source < 50 && Math.random() > 0.97) || this.check > 20) {
+            const e = Math.round(numEvent / 3 * Math.random());
+            this.check = 0;
+            return e + numEvent / 3 * 2
+        }
+        this.check = this.check + 1;
         return -1;
     }
 
     updateEvent(past) {
-        const money = this.spawn(past.money);
+        const money = this.spawn(past.money / 1000);
         const reputation = this.spawn(past.reputation);
-        const efficiency = this.spawn(past.efficiency);
-        if (money+reputation+efficiency !== -3) {
-            const newEvent = {money: money, reputation: reputation, efficiency: efficiency};
+        if (money + reputation !== -2) {
+            const newEvent = {money: money, reputation: reputation};
             return newEvent 
         }
         else {
-            return { money: -1, reputation: -1, efficiency: -1 };
+            return {money: -1, reputation: -1};
         }
     }
 
@@ -181,6 +192,10 @@ export default class GameState extends React.Component {
         }
     }
 
+    pause() {
+        clearInterval(this.timerID);
+    }
+
     render() {
         const scores = this.state.scores;
         const skills = this.state.skills;
@@ -201,6 +216,8 @@ export default class GameState extends React.Component {
                 skills = {skills}
                 percentage = {percentage}
                 skillPointLeft = {skillPointLeft}
+                pause={this.pause}
+                resume={this.tick}
                 />
             </div>
         );
