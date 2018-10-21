@@ -12,10 +12,12 @@ class EventModal extends React.Component {
 
     toggleHidden(toggle, r) {
         this.props.changeSkill(r.skills);
-        alert("skill changed! " + r.skills);
+        this.props.changeScore(r.scores);
+        alert("skill changed! " + r.skills + "\nscore changed! " + r.scores);
         this.setState({
             isHidden: toggle
         });
+        this.props.setClick();
     };
 
     option(l,r) {

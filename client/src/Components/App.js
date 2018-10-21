@@ -16,13 +16,18 @@ import event from '../event.json';
 class App extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { isShow: "inline" };
+        this.state = { isShow: "inline", clicked: false };
         this.show = this.show.bind(this);
+        this.setClick = this.setClick.bind(this);
     }
 
     sum(f) {
         const v = Math.round((f.asia + f.na + f.sa + f.pacific + f.africa + f.eu) * 100) / 100;
         return v;
+    }
+
+    setClick() {
+        this.setState({clicked: true})
     }
 
     fetchEvent(e) {
@@ -32,6 +37,12 @@ class App extends React.Component {
         }
         if (e.reputation !== -1) {
             eventList.push(event[1][e.reputation]);
+        }
+        if (eventList.length > 0 && this.state.clicked == true) {
+            this.setState (
+{                clicked: false
+}            )
+            this.forceUpdate();
         }
         return eventList;
     }
@@ -72,6 +83,8 @@ class App extends React.Component {
                         <div>
                             <EventModal eventsList={eventsList}
                                         changeSkill={this.props.changeSkill}
+                                        changeScore={this.props.changeScore}
+                                        setClick={this.setClick}
                             />
                             <Header
                                 money={this.props.scores.money}

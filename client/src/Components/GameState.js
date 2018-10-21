@@ -17,10 +17,12 @@ export default class GameState extends React.Component {
             moHistory: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
             reHistory: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
             peHistory: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            events: { money: -1, reputation: -1 },
+            events: { yes: true, money: -1, reputation: -1 },
+            isEvent: true,
             factoryChange: [0, 0, 0, 0, 0],
             skillPointLeft: 35
         }
+        this.changeScore = this.changeScore.bind(this);
         this.changeSkill = this.changeSkill.bind(this);
         this.changeFactory = this.changeFactory.bind(this);
         this.addToStack = this.addToStack.bind(this);
@@ -43,6 +45,25 @@ export default class GameState extends React.Component {
         if (stack.length > max) stack.shift();
         return stack;
     }
+
+    changeScore(c) {
+        const sc = this.state.scores;
+
+        const money = sc.money + c[0];
+        const reputation = sc.reputation + c[1];
+        const efficiency = sc.efficiency + c[2];
+    
+        this.setState({
+                isEvent: true,
+                scores: {
+                    money: money,
+                    reputation: reputation,
+                    efficiency: efficiency
+                },
+                events: { yes: false, money: -1, reputation: -1 },
+        });
+        }
+
 
     changeFactory(c) {
         const sc = this.state.scores;
@@ -108,7 +129,7 @@ export default class GameState extends React.Component {
                     product: product,
                     profit: profit
                 },
-                skillPointLeft: l - point
+                skillPointLeft: l - point,
             });
         }
     }
@@ -123,7 +144,7 @@ export default class GameState extends React.Component {
 
         this.setState({
             moChange: moChange,
-            reChange: reChange
+            reChange: reChange,
         });
 
         var newScore = {
@@ -173,17 +194,17 @@ export default class GameState extends React.Component {
     }
 
     spawn(source) {
-        if ((source > 200 && Math.random() > 0.97) || this.check > 15) {
+        if ((source > 200 && Math.random() > 0) || this.check > 20) {
             const e = Math.floor(numEvent / 3 * Math.random());
             this.check = 0;
             return e;
         }
-        else if ((source < 200 && source > 50 && Math.random() > 0) || this.check > 10) {
+        else if ((source < 200 && source > 50 && Math.random() > 0) || this.check > 20) {
             const e = Math.floor(numEvent / 3 * Math.random());
             this.check = 0;
             return e + numEvent / 3;
         }
-        else if ((source < 50 && Math.random() > 0.97) || this.check > 10) {
+        else if ((source < 50 && Math.random() > 0.97) || this.check > 20) {
             const e = Math.floor(numEvent / 3 * Math.random());
             this.check = 0;
             return e + numEvent / 3 * 2
@@ -196,7 +217,10 @@ export default class GameState extends React.Component {
         const money = this.spawn(past.money / 1000);
         const reputation = this.spawn(past.reputation);
         if (money + reputation !== -2) {
-            const newEvent = { money: money, reputation: reputation };
+            this.setState(
+                {isEvent: false
+            })
+            const newEvent = { yes: true, money: money, reputation: reputation };
             return newEvent
         }
         else {
@@ -205,11 +229,22 @@ export default class GameState extends React.Component {
     }
 
     tick() {
+        if (this.state.isEvent === true) {
+            this.setState((state) => ({
+                scores: this.updateScores(state),
+                percentage: this.updatePercen(state),
+                events: this.updateEvent(state.scores)
+            }))
+        }
+        else {
         this.setState((state) => ({
             scores: this.updateScores(state),
             percentage: this.updatePercen(state),
-            events: this.updateEvent(state.scores)
+            events: state.events,
         }));
+    }
+    //alert(this.state.isEvent + " " + this.state.events.money + " " + this.state.events.reputation)
+
     }
 
     endGame() {
@@ -241,12 +276,15 @@ export default class GameState extends React.Component {
         const percentage = this.state.percentage;
         const skillPointLeft = this.state.skillPointLeft;
         const gameState = this.endGame();
+        const isEvent = this.state.isEvent;
         return (
             <div>
                 <App
                     gameState={gameState}
+                    changeScore={this.changeScore}
                     changeSkill={this.changeSkill}
                     changeFactory={this.changeFactory}
+                    isEvent={isEvent}
                     events={events}
                     scores={scores}
                     factories={factories}
