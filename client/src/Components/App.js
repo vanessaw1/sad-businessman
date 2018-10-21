@@ -48,9 +48,8 @@ class App extends React.Component {
     }
 
     show(e) {
-        alert("Please confirm")
         if (this.state.isShow === "inline") {
-            alert("Please confirm")
+            alert("Please confirm opening map! Click to go back.")
             this.setState({ isShow: "none" })
         }
         else {
