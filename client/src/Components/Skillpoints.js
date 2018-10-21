@@ -31,7 +31,7 @@ class Skillpoints extends React.Component {
         const skills = this.props.skills;
         return (
             <div className="Intro">
-                These are your current upgrades. You can allocate your points from here. 
+                These are your current upgrades. You can allocate your points from here.
                 Increasing and decreasing points costs money.
                 You have {this.props.skillPointLeft} points left.
                 <div className="Upgrades">
@@ -41,8 +41,7 @@ class Skillpoints extends React.Component {
                         Bribes:   {skills.bribe}
                         <div className="description">
                             Cost: $1000<br />
-                            Buy a bribe to government and NGO officials to put in good words for your company.
-                            Bribe the African government! Helps increase destruction/day by 0.5
+                            Bribe the government to put in good words for your company!
                         </div>
                     </div>
                     <div>
@@ -51,8 +50,7 @@ class Skillpoints extends React.Component {
                         PR (Public Relation): {skills.pr}
                         <div className="description">
                             Cost: $1000<br />
-                            Imploy a communication strategy that builds beneficial relationships between your company and its publics.
-                            Don't forget to maintain a good image! Helps increase destruction/day by 0.05
+                            Don't forget to maintain a good image!
                         </div>
                     </div>
                     <div>
@@ -61,8 +59,7 @@ class Skillpoints extends React.Component {
                         Advertisement Effectiveness: {skills.ads}
                         <div className="description">
                             Cost: $1000<br />
-                            Make an effective advertisement to increase your company's influence and reputation.
-                            More advertising means more consumers! Helps increase destruction/day by 0.05
+                            More advertising means, more consumers!
                         </div>
                     </div>
                     <div>
@@ -71,8 +68,7 @@ class Skillpoints extends React.Component {
                         Product Output: {skills.product}
                         <div className="description">
                             Cost: $1000<br />
-                            Increase your company's product quality to increase its reputation.
-                            You can never have enough product! Helps increase destruction/day by 0.05
+                            You can never have enough product!
                         </div>
                     </div>
                     <div>
@@ -81,8 +77,7 @@ class Skillpoints extends React.Component {
                         Profit Margin: {skills.profit}
                         <div className="description">
                             Cost: $1000<br />
-                            Get your profit margin close to optimal so that you make the most out of what you make.
-                            Increases how much money you make per product. Helps increase destruction/day by 0.05
+                            Increases how much money you make per product.
                         </div>
                     </div>
                 </div>

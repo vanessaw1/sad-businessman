@@ -1,150 +1,163 @@
 <html>
-  <head>
+
+<head>
   <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-  <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js"
-  type="text/javascript" charset="utf-8"></script>
-  <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js"
-  type="text/javascript" charset="utf-8"></script>
+  <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
+  <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
   <meta name="viewport" content="initial-scale=1.0,
   width=device-width" />
-<script src="http://js.api.here.com/v3/3.0/mapsjs-ui.js"
-  type="text/javascript" charset="utf-8"></script>
-<link rel="stylesheet" type="text/css"
-  href="http://js.api.here.com/v3/3.0/mapsjs-ui.css" />
-  </head>
-  <body>
+  <script src="http://js.api.here.com/v3/3.0/mapsjs-ui.js" type="text/javascript" charset="utf-8"></script>
+  <link rel="stylesheet" type="text/css" href="http://js.api.here.com/v3/3.0/mapsjs-ui.css" />
+</head>
+
+<body>
   <center id="map">
-  <h1 id="contents">Hello</h1>
-  <div style="width: 640px; height: 480px;" id="mapContainer"></div> </center>
-  <button id="show/hide" onclick="showHideSection('map')">Hide</button>
+    <h1 id="contents">Hello</h1>
+    <div style="
+    width: 1280px; 
+    height: 720px; 
+    margin-right: auto;
+    margin-left: auto;" id="mapContainer"></div>
+  </center>
   <script>
-  function showHideSection(section){
-    var x = document.getElementById(section);
-    if (x.style.display == "none") {
-      x.style.display = "block";
-      document.getElementById("show/hide").innerHTML = "Hide"
-      var txt = document.getElementById("contents");
-      txt.innerHTML = "Score:"+score;
-    } else {
-      x.style.display = "none";
-      document.getElementById("show/hide").innerHTML = "Show"
-    }
-  }
-
-  function decreaseice(){
-    var a= Math.random()*10;
-    var b=[];
-    if(a<7){
-      b = [(-90+Math.random()*30),(-90+Math.random()*180)];
-    }
-    else {
-      b=[71+Math.random()*5,-42+Math.random()*5]
-    }
-    map.addObject(new H.map.Circle(
-      // The central point of the circle
-      {lat:b[0], lng:b[1]},
-      // The radius of the circle in meters
-      300000,
-      {
-        style: {
-          strokeColor: 'rgba(24,78,111, 0.6)', // Color of the perimeter
-          lineWidth: 2,
-          fillColor: 'rgba(24,78,111, 0.7)'  // Color of the circle
-        }
+    function showHideSection(section) {
+      var x = document.getElementById(section);
+      if (x.style.display == "none") {
+        x.style.display = "block";
+        document.getElementById("show/hide").innerHTML = "Hide"
+        var txt = document.getElementById("contents");
+        txt.innerHTML = "Score:" + score;
+      } else {
+        x.style.display = "none";
+        document.getElementById("show/hide").innerHTML = "Show"
       }
-    ));
-  }
-  function adddesert(lst,k){
-    map.addObject(new H.map.Circle(
-      // The central point of the circle
-      {lat:lst[k][0], lng:lst[k][1]},
-      // The radius of the circle in meters
-      700000,
-      {
-        style: {
-          strokeColor: 'black', // Color of the perimeter
-          lineWidth: 2,
-          fillColor: 'red'
-          //'rgba(180,160,120,0.7)'  // Color of the circle
-        }
-      }
-    ));
-    return k=k+1;
-  }
-function setBaseLayer(map, platform){
-  var mapTileService = platform.getMapTileService({
-      type: 'aerial'
-    });
-  var parameters = {};
-  var tileLayer = mapTileService.createTileLayer(
-      'maptile',
-      'satellite.day',
-      256,
-      'png8',
-      parameters
-    );
-  map.setBaseLayer(tileLayer);
-}
-	function geocode(platform,cityname) {
-  	var geocoder = platform.getGeocodingService(),
-    	geocodingParameters = {
-      	searchText:cityname,
-	      jsonattributes : 1
-    	};
+    }
 
-  	geocoder.geocode(
-    	geocodingParameters,
-    	onSuccess,
-    	onError
-  	);
-	}
-	function onSuccess(result) {
-  	var locations = result.response.view[0];
-		var p = locations.result[0].location.displayPosition;
-    var icon = new H.map.Icon('http://icons.iconarchive.com/icons/awicons/vista-artistic/256/office-building-icon.png',{size: {w: 20, h: 20}});
-    var marker = new H.map.Marker({lat: p.latitude, lng: p.longitude}, { icon: icon });
-    map.addObject(marker);
-	}
-	function onError(error) {
-  	alert('Ooops!');
-	}
-  function changelook(score,listd){
-      var k = score / 10 -1;
-      adddesert(listd,k*2);
-      adddesert(listd,k*2+1);
+    function decreaseice() {
+      var a = Math.random() * 10;
+      var b = [];
+      if (a < 7) {
+        b = [(-90 + Math.random() * 30), (-90 + Math.random() * 180)];
+      }
+      else {
+        b = [71 + Math.random() * 5, -42 + Math.random() * 5]
+      }
+
+      map.addObject(new H.map.Circle(
+        // The central point of the circle
+        { lat: b[0], lng: b[1] },
+        // The radius of the circle in meters
+        300000,
+        {
+          style: {
+            strokeColor: 'rgba(24,78,111, 0.6)', // Color of the perimeter
+            lineWidth: 2,
+            fillColor: 'rgba(24,78,111, 0.7)'  // Color of the circle
+          }
+        }
+      ));
+    }
+
+    function adddesert(lst, k) {
+      map.addObject(new H.map.Circle(
+        // The central point of the circle
+        { lat: lst[k][0], lng: lst[k][1] },
+        // The radius of the circle in meters
+        700000,
+        {
+          style: {
+            strokeColor: 'black', // Color of the perimeter
+            lineWidth: 2,
+            fillColor: 'red'
+            //'rgba(180,160,120,0.7)'  // Color of the circle
+          }
+        }
+      ));
+      return k = k + 1;
+    }
+
+    function setBaseLayer(map, platform) {
+      var mapTileService = platform.getMapTileService({
+        type: 'aerial'
+      });
+      var parameters = {};
+      var tileLayer = mapTileService.createTileLayer(
+        'maptile',
+        'satellite.day',
+        256,
+        'png8',
+        parameters
+      );
+      map.setBaseLayer(tileLayer);
+    }
+
+    function geocode(platform, cityname) {
+      var geocoder = platform.getGeocodingService(),
+        geocodingParameters = {
+          searchText: cityname,
+          jsonattributes: 1
+        };
+
+      geocoder.geocode(
+        geocodingParameters,
+        onSuccess,
+        onError
+      );
+    }
+
+    function onSuccess(result) {
+      var locations = result.response.view[0];
+      var p = locations.result[0].location.displayPosition;
+      var icon = new H.map.Icon('http://icons.iconarchive.com/icons/awicons/vista-artistic/256/office-building-icon.png', { size: { w: 20, h: 20 } });
+      var marker = new H.map.Marker({ lat: p.latitude, lng: p.longitude }, { icon: icon });
+      map.addObject(marker);
+    }
+
+    function onError(error) {
+      alert('Ooops!');
+    }
+
+    function changelook(score, listd) {
+      var k = score / 10 - 1;
+      adddesert(listd, k * 2);
+      adddesert(listd, k * 2 + 1);
       decreaseice();
-  }
-  // Initialize the platform object:
-	var platform = new H.service.Platform({
-	'app_id': 'zVksltLgpJO90XUG89w2',
-	'app_code': 'f6HslU0aES-dyIi3IWiL6A'
-	});
+    }
 
-	// Obtain the default map types from the platform object
-	var maptypes = platform.createDefaultLayers();
-  var defaultLayers = platform.createDefaultLayers();
-	// Instantiate (and display) a map object:
-	var map = new H.Map(
-	document.getElementById('mapContainer'),
-	maptypes.normal.map,
-	{
-		zoom: 1.2,
-		center: { lng: -74, lat: 40 }
-	});
-  var k = 0;
-  var ui = H.ui.UI.createDefault(map, defaultLayers);
-  var dessert = [[10,30],[20,100],[0,15],[0,30],[40,-92],[30,110],[20,40],[25,113],[10,30],[20,-100]];
-  var score = 20;
-  setBaseLayer(map, platform);
+    // Initialize the platform object:
+    var platform = new H.service.Platform({
+      'app_id': 'zVksltLgpJO90XUG89w2',
+      'app_code': 'f6HslU0aES-dyIi3IWiL6A'
+    });
 
-  geocode(platform,"new york");
-  geocode(platform,"boston");
-  geocode(platform,"beijing");
+    // Obtain the default map types from the platform object
+    var maptypes = platform.createDefaultLayers();
+    var defaultLayers = platform.createDefaultLayers();
+    // Instantiate (and display) a map object:
+    var map = new H.Map(
+      document.getElementById('mapContainer'),
+      maptypes.normal.map,
+      {
+        zoom: 1.8,
+        center: { lng: -74, lat: 40 }
+      });
 
- if(score % 20 ==0){
-  changelook(score,dessert);}
-  score = score+10;
+    var k = 0;
+    var ui = H.ui.UI.createDefault(map, defaultLayers);
+    var dessert = [[10, 30], [20, 100], [0, 15], [0, 30], [40, -92], [30, 110], [20, 40], [25, 113], [10, 30], [20, -100]];
+    var score = 20;
+    setBaseLayer(map, platform);
 
-</script>
+    geocode(platform, "new york");
+    geocode(platform, "boston");
+    geocode(platform, "beijing");
+
+    if (score % 20 == 0) {
+      changelook(score, dessert);
+    }
+    score = score + 10;
+
+  </script>
 </body>
+
 </html>

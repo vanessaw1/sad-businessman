@@ -18,7 +18,7 @@ import event from '../event.json';
 class App extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {isShow: "inline"};
+        this.state = { isShow: "inline" };
         this.show = this.show.bind(this);
     }
 
@@ -36,15 +36,15 @@ class App extends React.Component {
         }
         return eventList;
     }
-    
-    show(e){
-        alert("???")
+
+    show(e) {
+        alert("Please confirm")
         if (this.state.isShow === "inline") {
-            alert("???")
-            this.setState({isShow: "none"})
+            alert("Please confirm")
+            this.setState({ isShow: "none" })
         }
         else {
-            this.setState({isShow: "inline"})
+            this.setState({ isShow: "inline" })
         }
     }
 
@@ -58,59 +58,59 @@ class App extends React.Component {
         const factorySum = this.sum(f);
         const skills = this.props.skills;
         const eventsList = this.fetchEvent(e);
-        const styles = {display: this.state.isShow}
+        const styles = { display: this.state.isShow }
 
         return (
             <div>
-                <button onClick={this.show}>
-                Hide Map
+                <button id="hidemapbtn" onClick={this.show}>
+                    Hide Map
                 </button>
                 <div style={styles}>
-                <div id="background">
-                <img src="https://wallpapersite.com/images/pages/pic_w/12048.jpg" class="stretch" alt="" />
-                </div>
-                <Router>
-                    <div>
-                        <EventModal eventsList={eventsList} />
-                        <Header
-                            money={this.props.scores.money}
-                            factories={factorySum}
-                            reputation={sc.reputation}
-                            destruction={destructionSum}
-                        />
-                        <Sidebar onClick={this.show}/>
-                        <div className="Content">
-                            <Route exact path="/" component={Welcome} />
-                            <Route path="/overview" render={(props) =>
-                                <Overview
-                                    money={this.props.moChange}
-                                    factories={factorySum}
-                                    reputation={this.props.reChange} 
-                                    destruction={this.props.peChange}
-                                    moHistory={this.props.moHistory} 
-                                    reHistory={this.props.reHistory} 
-                                    deHistory={this.props.peHistory} 
-                                />} 
-                            />
-                            <Route path="/skillpoints" render={(props) =>
-                                <Skillpoints
-                                    skills={skills}
-                                    beep={this.props.beep}
-                                    changeSkill={this.props.changeSkill}
-                                    skillPointLeft={this.props.skillPointLeft}
-                                />
-                            } />
-                            <Route path="/factories" render={(props) =>
-                                <Factories
-                                    factories={f}
-                                    changeFactory={this.props.changeFactory}
-                                />} />
-                            <Route path="/inbox" component={Inbox} />
-                            <Route path="/login" component={Login} />
-                        </div>
+                    <div id="background">
+                        <img src="https://wallpapersite.com/images/pages/pic_w/12048.jpg" class="stretch" alt="" />
                     </div>
-                </Router>
-            </div>
+                    <Router>
+                        <div>
+                            <EventModal eventsList={eventsList} />
+                            <Header
+                                money={this.props.scores.money}
+                                factories={factorySum}
+                                reputation={sc.reputation}
+                                destruction={destructionSum}
+                            />
+                            <Sidebar onClick={this.show} />
+                            <div className="Content">
+                                <Route exact path="/" component={Welcome} />
+                                <Route path="/overview" render={(props) =>
+                                    <Overview
+                                        money={this.props.moChange}
+                                        factories={factorySum}
+                                        reputation={this.props.reChange}
+                                        destruction={this.props.peChange}
+                                        moHistory={this.props.moHistory}
+                                        reHistory={this.props.reHistory}
+                                        deHistory={this.props.peHistory}
+                                    />}
+                                />
+                                <Route path="/skillpoints" render={(props) =>
+                                    <Skillpoints
+                                        skills={skills}
+                                        beep={this.props.beep}
+                                        changeSkill={this.props.changeSkill}
+                                        skillPointLeft={this.props.skillPointLeft}
+                                    />
+                                } />
+                                <Route path="/factories" render={(props) =>
+                                    <Factories
+                                        factories={f}
+                                        changeFactory={this.props.changeFactory}
+                                    />} />
+                                <Route path="/inbox" component={Inbox} />
+                                <Route path="/login" component={Login} />
+                            </div>
+                        </div>
+                    </Router>
+                </div>
             </div>
 
         );
