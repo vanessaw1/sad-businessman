@@ -8,7 +8,8 @@ We think about how people can learn from the past experience. Goals: By having t
 
 A web-based game where a single player plays the role of a businessman of a corporation and tries to use the resources (e.g. money) available to expand his or her business by making decisions about development strategies (e.g. public relations, "bribe", advertisement, product quality, etc. and how they influence the the environment when they are only focused on profit) and building factories around the world. While the goal for the player is to make money and eventually destroy the entire environment, the purpose of the game is educational - we would like to remind people of the impact of their current actions on the future of the environment by letting them experience the past. This game is intended to raise awareness of environmental protection.
 
-### How we built it
-
-### What's next for sad businessperson
-
+### screenshot:
+![alt text](/imgs/1.jpg)
+![alt text](/imgs/2.jpg)
+![alt text](/imgs/3.jpg)
+![alt text](/imgs/4.jpg)
