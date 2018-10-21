@@ -1,9 +1,7 @@
 .inc .dec {
-    padding: 20px 30px;
     text-align: center;
     color: rgb(122, 45, 86);
     cursor: pointer;
-    margin: 10px 0px;
     width: 100%;
     display: block;
 }
@@ -17,11 +15,11 @@ button:hover {
     margin: 10px, 10px;
     font-size: 30px;
     padding-bottom: 10px;
-    color: deeppink;
+    color: yellow;
 }
 
 .Intro {
     margin: 1rem 1rem;
     font-size: 30px;
-    color: deeppink;
+    color: white;
 }

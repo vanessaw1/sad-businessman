@@ -12,57 +12,89 @@ class Factories extends React.Component {
         this.handlePacific = this.handlePacific.bind(this);
     }
 
-    handleAfrica(e) {this.props.changeFactory([1,0,0,0,0,0])}
-    handleNA(e) {this.props.changeFactory([0,1,0,0,0,0])}
-    handleSA(e) {this.props.changeFactory([0,0,1,0,0,0])}
-    handleAsia(e) {this.props.changeFactory([0,0,0,1,0,0])}
-    handleEurope(e) {this.props.changeFactory([0,0,0,0,1,0])}
-    handlePacific(e) {this.props.changeFactory([0,0,0,0,0,1])}
+    handleAfrica(e) { this.props.changeFactory([1, 0, 0, 0, 0, 0]) }
+    handleNA(e) { this.props.changeFactory([0, 1, 0, 0, 0, 0]) }
+    handleSA(e) { this.props.changeFactory([0, 0, 1, 0, 0, 0]) }
+    handleAsia(e) { this.props.changeFactory([0, 0, 0, 1, 0, 0]) }
+    handleEurope(e) { this.props.changeFactory([0, 0, 0, 0, 1, 0]) }
+    handlePacific(e) { this.props.changeFactory([0, 0, 0, 0, 0, 1]) }
+
+    createDotLists(n, continent) {
+        let dotlsts = []
+
+        // Outer loop to create parent
+        for (let i = 0; i < n; i++) {
+            // dotlsts.push(<div class={"dot" + continent + i}>
+            dotlsts.push(<div class={"dot"}>
+                <span class="cityname">CityName</span>
+            </div>)
+        }
+        return dotlsts
+    }
 
     render() {
+        const f = this.props.factories
+        const sa_num = f.sa
+        const na_num = f.na
+        const af_num = f.africa
+        const as_num = f.asia
+        const eu_num = f.eu
+        const pa_num = f.pacific
 
-        // const factoryItems = this.props.factories.map(factory => 
+        // const factoryItems = this.props.factories.map(factory =>
         //     <li>{factory}</li>
         // );
 
         return (
             <div className="FactoriesContent">
                 These are your factories. You can manage your factories from here.
-                <table>
+                <table className="FactoriesTable">
                     <tr>
-                        <th>Add New Factory</th>
+                        <th></th>
                         <th>Continents</th>
                         <th>Factories</th>
                     </tr>
                     <tr>
-                        <th><button onClick={this.handleAfrica}>Add Factory</button></th>
-                        <th>Africa</th>
-                        <th>Nairobi, Malabo, dasfasdf, adsfasdf, asdfs</th>
+                        <td><button onClick={this.handleAfrica}>Add</button></td>
+                        <td>Africa</td>
+                        <td>
+                            {this.createDotLists(af_num, "AF")}
+                        </td>
                     </tr>
                     <tr>
-                        <th><button onClick={this.handleNA}>Add Factory</button></th>
-                        <th>North America</th>
-                        <th>asdf</th>
+                        <td><button onClick={this.handleNA}>Add</button></td>
+                        <td>North America</td>
+                        <td>
+                            {this.createDotLists(na_num, "NA")}
+                        </td>
                     </tr>
                     <tr>
-                        <th><button onClick={this.handleSA}>Add Factory</button></th>
-                        <th>South America</th>
-                        <th>asdf</th>
+                        <td><button onClick={this.handleSA}>Add</button></td>
+                        <td>South America</td>
+                        <td>
+                            {this.createDotLists(sa_num, "SA")}
+                        </td>
                     </tr>
                     <tr>
-                        <th><button onClick={this.handleAsia}>Add Factory</button></th>
-                        <th>Asia</th>
-                        <th>asdfasdf</th>
+                        <td><button onClick={this.handleAsia}>Add</button></td>
+                        <td>Asia</td>
+                        <td>
+                            {this.createDotLists(as_num, "AS")}
+                        </td>
                     </tr>
                     <tr>
-                        <th><button onClick={this.handleEurope}>Add Factory</button></th>
-                        <th>Europe</th>
-                        <th>asdfasdf</th>
+                        <td><button onClick={this.handleEurope}>Add</button></td>
+                        <td>Europe</td>
+                        <td>
+                            {this.createDotLists(eu_num, "EU")}
+                        </td>
                     </tr>
                     <tr>
-                        <th><button onClick={this.handlePacific}>Add Factory</button></th>
-                        <th>Pacific</th>
-                        <th>asdfasdf</th>
+                        <td><button onClick={this.handlePacific}>Add</button></td>
+                        <td>Pacific</td>
+                        <td>
+                            {this.createDotLists(pa_num, "PA")}
+                        </td>
                     </tr>
                 </table>
             </div>
