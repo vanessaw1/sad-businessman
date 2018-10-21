@@ -35,34 +35,54 @@ class Skillpoints extends React.Component {
                 You have {this.props.skillPointLeft} points left.
                 <div className="Upgrades">
                     <div>
-                        <button className="inc" onClick={this.handleBribeInc}>+</button>
                         <button className="dec" onClick={this.handleBribeDec}>-</button>
-                        Bribes: {skills.bribe}
-                        {"     Buy a bribe to government and NGO officials to put in good words for your company."}
+                        <button className="inc" onClick={this.handleBribeInc}>+</button>
+                        Bribes:   {skills.bribe}
+                        <div className="description">
+                            Cost: $1000<br />
+                            Buy a bribe to government and NGO officials to put in good words for your company.
+                            Bribe the African government! Helps increase destruction/day by 0.5
+                        </div>
                     </div>
                     <div>
-                        <button className="inc" onClick={this.handlePRInc}>+</button>
                         <button className="dec" onClick={this.handlePRDec}>-</button>
+                        <button className="inc" onClick={this.handlePRInc}>+</button>
                         PR (Public Relation): {skills.pr}
-                        {"    Imploy a communication strategy that builds beneficial relationships between your company and its publics."}
+                        <div className="description">
+                            Cost: $1000<br />
+                            Imploy a communication strategy that builds beneficial relationships between your company and its publics.
+                            Don't forget to maintain a good image! Helps increase destruction/day by 0.05
+                        </div>
                     </div>
                     <div>
-                        <button className="inc" onClick={this.handleAdsInc}>+</button>
                         <button className="dec" onClick={this.handleAdsDec}>-</button>
+                        <button className="inc" onClick={this.handleAdsInc}>+</button>
                         Advertisement Effectiveness: {skills.ads}
-                        {"    Make an effective advertisement to increase your company's influence and reputation."}
+                        <div className="description">
+                            Cost: $1000<br />
+                            Make an effective advertisement to increase your company's influence and reputation.
+                            More advertising means more consumers! Helps increase destruction/day by 0.05
+                        </div>
                     </div>
                     <div>
-                        <button className="inc" onClick={this.handleProductInc}>+</button>
                         <button className="dec" onClick={this.handleProductDec}>-</button>
+                        <button className="inc" onClick={this.handleProductInc}>+</button>
                         Product Output: {skills.product}
-                        {"    Increase your company's product quality to increase its reputation."}
+                        <div className="description">
+                            Cost: $1000<br />
+                            Increase your company's product quality to increase its reputation.
+                            You can never have enough product! Helps increase destruction/day by 0.05
+                        </div>
                     </div>
                     <div>
-                        <button className="inc" onClick={this.handleProfitInc}>+</button>
                         <button className="dec" onClick={this.handleProfitDec}>-</button>
+                        <button className="inc" onClick={this.handleProfitInc}>+</button>
                         Profit Margin: {skills.profit}
-                        {"    Get your profit margin close to optimal so that you make the most out of what you make."}
+                        <div className="description">
+                            Cost: $1000<br />
+                            Get your profit margin close to optimal so that you make the most out of what you make.
+                            Increases how much money you make per product. Helps increase destruction/day by 0.05
+                        </div>
                     </div>
                 </div>
             </div>

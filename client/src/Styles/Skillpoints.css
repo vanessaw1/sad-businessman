@@ -8,8 +8,7 @@
     color: rgb(122, 45, 86);
     background-color: transparent;
     font-family: 'neuron';
-    margin-left: 2rem;
-    margin-top: 2rem;
+    margin: 1rem;
     cursor: pointer;
     border-radius: 5px;
     cursor: pointer;
@@ -22,7 +21,7 @@
     font-weight: bolder;
 }
 
-.dec {
+.inc {
     margin-right: 2rem;
 }
 
@@ -41,4 +40,10 @@
     margin: 1rem 1rem;
     font-size: 25px;
     color: wheat;
+}
+
+.description {
+    margin-left: 140px;
+    font-size: 20px;
+    margin-bottom: 10px;
 }
