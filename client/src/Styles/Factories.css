@@ -48,21 +48,36 @@
 .dot {
   height: 80px;
   width: 80px;
-  margin-top: 4rem;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
   margin-left: 4rem;
   margin-right: 4rem;
-  background-color: rgb(218, 218, 5);
-  opacity: 50%;
   border-radius: 50%;
   display: inline-block;
   position: relative;
 }
 
+.img-circle {
+  border-radius: 50%;
+}
+
+.btn {
+  position: absolute;
+  margin-top: -75px;
+  margin-left: 30px;
+  background-color: transparent;
+  cursor: pointer;
+  border: None;
+  width: 40px;
+  height: 40px;
+}
+
 .cityname {
-  visibility: visible;
   width: 120px;
   color: yellow;
-  background-color: black;
+  background-color: transparent;
+  border: none;
+  font-weight: bolder;
   text-align: center;
   border-radius: 6px;
   padding: 5px 0;
@@ -70,10 +85,74 @@
   bottom: 100%;
   left: 50%;
   margin-bottom: 5px;
-  margin-left: -60px;
+  margin-left: -50px;
   position: absolute;
   z-index: 1;
 } 
+
+/* #Beijing {
+  background-image: url('../Resources/Cities/Beijing.jpg');
+}
+
+#Berlin {
+  background-image: url('../Resources/Cities/Berlin.jpg');
+}
+
+#Boston {
+  background-image: url('../Resources/Cities/Boston.jpg');
+}
+
+#Brasilia {
+  background-image: url('../Resources/Cities/Brasilia.jpg');
+}
+
+#Fukushima {
+  background-image: url('../Resources/Cities/Fukushima.jpg');
+}
+
+#Hanoi {
+  background-image: url('../Resources/Cities/Hanoi.jpg');
+}
+
+#Beijing {
+  background-image: url('../Resources/Cities/Ithaca.jpg');
+}
+
+#Lima {
+  background-image: url('../Resources/Cities/Lima.jpg');
+}
+
+#London {
+  background-image: url('../Resources/Cities/London.jpg');
+}
+
+#Malabo {
+  background-image: url('../Resources/Cities/Malabo.jpg');
+}
+
+#Moscow {
+  background-image: url('../Resources/Cities/Moscow.jpg');
+}
+
+#Nairobi {
+  background-image: url('../Resources/Cities/Nairobi.jpg');
+}
+
+#New York {
+  background-image: url('../Resources/Cities/New\ York.jpg');
+}
+
+#Paris {
+  background-image: url('../Resources/Cities/Paris.jpg');
+}
+
+#Sydney {
+  background-image: url('../Resources/Cities/Sydney.jpg');
+}
+
+#Wellington {
+  background-image: url('../Resources/Cities/Wellington.jpg');
+} */
 
 /* .FactoriesTable td:nth-child(2) {
   color: yellow;

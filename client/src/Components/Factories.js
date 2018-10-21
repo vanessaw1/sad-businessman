@@ -1,5 +1,21 @@
 import React from 'react';
 import '../Styles/Factories.css';
+import Beijing from "../Resources/Cities/Beijing.jpg";
+import Berlin from "../Resources/Cities/Berlin.jpg";
+import Boston from '../Resources/Cities/Boston.jpg';
+import Brasilia from '../Resources/Cities/Brasilia.jpg';
+import Fukushima from "../Resources/Cities/Fukushima.jpg";
+import Hanoi from "../Resources/Cities/Hanoi.jpg";
+import Ithaca from "../Resources/Cities/Ithaca.jpg";
+import Lima from '../Resources/Cities/Lima.jpg';
+import London from '../Resources/Cities/London.jpg';
+import Malabo from '../Resources/Cities/Malabo.jpg';
+import Moscow from '../Resources/Cities/Moscow.jpg';
+import Nairobi from '../Resources/Cities/Nairobi.jpg';
+import NYC from '../Resources/Cities/New\ York.jpg';
+import Paris from '../Resources/Cities/Paris.jpg';
+import Sydney from '../Resources/Cities/Sydney.jpg';
+import Wellington from '../Resources/Cities/Wellington.jpg';
 
 class Factories extends React.Component {
     constructor(props) {
@@ -19,15 +35,19 @@ class Factories extends React.Component {
     handleEurope(e) { this.props.changeFactory([0, 0, 0, 0, 1, 0]) }
     handlePacific(e) { this.props.changeFactory([0, 0, 0, 0, 0, 1]) }
 
-    createDotLists(citylst) {
+    createDotLists(citylst, cityname, handle) {
         let dotlsts = []
 
         // Outer loop to create parent
         for (let i = 0; i < 4; i++) {
             dotlsts.push(
-                <div className={citylst[i] + i + " dot"}>
-                    <span className="cityname"> {citylst[i]}</span>
-                </div>
+                <div className={"dot"}>
+                    <img className="img-circle"
+                        src={citylst[i]} width="100" height="100">
+                    </img>
+                    <span className="cityname"> {cityname[i]}</span>
+                    <button class="btn" onClick={handle[i]}></button>
+                </div >
             )
         }
         return dotlsts
@@ -45,23 +65,39 @@ class Factories extends React.Component {
         // const factoryItems = this.props.factories.map(factory =>
         //     <li>{factory}</li>
         // );
+        const lst1 = [NYC, Beijing, Lima, Sydney];
+        const lst1str = ["NYC", "Beijing", "Lima", "Sydney"];
+        const lst1handle = [this.handleNA, this.handleAsia, this.handleSA, this.handlePacific];
+
+        const lst2 = [Ithaca, Hanoi, Wellington, Paris];
+        const lst2str = ["Ithaca", "Hanoi", 'Wellington', "Paris"];
+        const lst2handle = [this.handleNA, this.handleAsia, this.handlePacific, this.handleEurope];
+
+        const lst3 = [Fukushima, Boston, Brasilia, Malabo];
+        const lst3str = ["Fukushima", "Boston", "Brasilia", "Malabo"];
+        const lst3handle = [this.handleAsia, this.handleNA, this.handleSA, this.handleAfrica];
+
+        const lst4 = [Nairobi, Moscow, Berlin, London];
+        const lst4str = ["Nairobi", "Moscow", "Berlin", "London"];
+        const lst4handle = [this.handleAfrica, this.handleEurope, this.handleEurope, this.handleEurope];
 
         return (
+
             <div className="FactoriesContent">
                 These are your factories from all over the world. You can manage your factories here.
 
             <div className="CitiesList">
                     <div>
-                        {this.createDotLists(["New York", "Beijing", "Lima", "Sydney"])}
+                        {this.createDotLists(lst1, lst1str, lst1handle)}
                     </div>
                     <div>
-                        {this.createDotLists(["Ithaca", "Hanoi", "Wellington", "Paris"])}
+                        {this.createDotLists(lst2, lst2str, lst2handle)}
                     </div>
                     <div>
-                        {this.createDotLists(["Fukushima", "Boston", "Brasília", "Malabo"])}
+                        {this.createDotLists(lst3, lst3str, lst3handle)}
                     </div>
                     <div>
-                        {this.createDotLists(["Nairobi", "Moscow", "Berlin", "London"])}
+                        {this.createDotLists(lst4, lst4str, lst4handle)}
                     </div>
                 </div>
 
