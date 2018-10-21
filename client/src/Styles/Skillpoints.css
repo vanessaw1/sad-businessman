@@ -1,8 +1,8 @@
 .inc .dec {
-    padding: 20px 30px;
     text-align: center;
     color: rgb(122, 45, 86);
     margin: 10px 0px;
+    cursor: pointer;
     width: 100%;
     display: block;
     border-radius: 5px;
@@ -17,11 +17,11 @@
     margin: 10px, 10px;
     font-size: 30px;
     padding-bottom: 10px;
-    color: deeppink;
+    color: yellow;
 }
 
 .Intro {
     margin: 1rem 1rem;
     font-size: 30px;
-    color: deeppink;
+    color: white;
 }
